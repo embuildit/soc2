@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC 2 Certification Directory | soc2certification.com</title>
+  <meta name="description" content="Find the right partner for your SOC 2 journey. Browse 50+ auditors & automation platforms, compare pricing, and learn with expert‑written guides.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root{--primary:#495AF5;--secondary:#7436FF}
+    .gradient-bg{background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);color:#fff}
+    .vendor-table th{white-space:nowrap}
+    .card-img-top{object-fit:cover;height:180px}
+    .sticky-header th{position:sticky;top:0;background:#e6ecff;z-index:1}
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#nav">
+<nav id="nav" class="navbar navbar-expand-lg navbar-dark gradient-bg shadow-sm fixed-top">
+ <div class="container">
+   <a class="navbar-brand fw-semibold" href="#">soc2certification.com</a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item"><a class="nav-link" href="#vendors"><i class="bi bi-list-check"></i> Vendors</a></li>
+       <li class="nav-item"><a class="nav-link" href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
+     </ul>
+   </div>
+ </div>
+</nav>
+
+<header class="gradient-bg py-5" style="margin-top:56px;">
+  <div class="container text-center py-5">
+    <h1 class="display-4 fw-bold">Your Shortcut to SOC 2</h1>
+    <p class="lead mb-4">50+ vetted auditors & automation platforms, crowdsourced pricing data, and field‑tested guidance.</p>
+    <a href="#vendors" class="btn btn-light btn-lg fw-semibold">Explore Vendors</a>
+  </div>
+</header>
+
+<section id="vendors" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold mb-4 text-center">SOC 2 Vendor Directory <span class="badge bg-primary align-middle">2025</span></h2>
+    <div class="table-responsive">
+      <table class="table table-hover align-middle vendor-table table-bordered table-sm">
+        <thead class="sticky-header">
+          <tr>
+            <th>Vendor</th>
+            <th>Category</th>
+            <th>Starter&nbsp;Plan</th>
+            <th>Turnaround</th>
+            <th>HQ</th>
+            <th>Certifications</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="vendorBody"></tbody>
+      </table>
+    </div>
+    <p class="text-muted small fst-italic mt-2">*Pricing and timeline figures are community‑submitted averages—always request a fresh quote.</p>
+  </div>
+</section>
+
+<section id="blog" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-4 text-center">Latest on the Blog</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="blogGrid"></div>
+    <div class="text-center mt-4">
+      <a href="blog.html" class="btn btn-primary btn-lg">View All Articles</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-light py-4">
+  <div class="container text-center small">© 2025 soc2certification.com · <a href="#" class="text-light text-decoration-none">Privacy</a> · <a href="#" class="text-light text-decoration-none">Contact</a></div>
+</footer>
+
+<script>
+/* -------- Vendor Data (54 entries) -------- */
+const vendorData=[
+  /* === Audit & Advisory Firms === */
+  {name:"Schellman",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Tampa, FL",certs:"SOC 2",url:"https://www.schellman.com"},
+  {name:"A‑LIGN",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Tampa, FL",certs:"SOC 2",url:"https://www.a-lign.com"},
+  {name:"BARR Advisory",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Kansas City, MO",certs:"SOC 2",url:"https://www.barradvisory.com"},
+  {name:"Coalfire",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Westminster, CO",certs:"SOC 2",url:"https://www.coalfire.com"},
+  {name:"Aprio",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Atlanta, GA",certs:"SOC 2",url:"https://www.aprio.com"},
+  {name:"Grant Thornton",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Chicago, IL",certs:"SOC 2",url:"https://www.grantthornton.com"},
+  {name:"Moss Adams",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Seattle, WA",certs:"SOC 1 & 2",url:"https://www.mossadams.com"},
+  {name:"Crowe LLP",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Chicago, IL",certs:"SOC 2",url:"https://www.crowe.com"},
+  {name:"RSM US",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Chicago, IL",certs:"SOC 2",url:"https://rsmus.com"},
+  {name:"BDO USA",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Chicago, IL",certs:"SOC 2",url:"https://www.bdo.com"},
+  {name:"Deloitte &Touche",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www2.deloitte.com"},
+  {name:"PwC",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.pwc.com"},
+  {name:"KPMG LLP",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.kpmg.com"},
+  {name:"Ernst & Young (EY)",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.ey.com"},
+  {name:"FORVIS",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Kansas City, MO",certs:"SOC 2",url:"https://www.forvis.com"},
+  {name:"Withum",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Princeton, NJ",certs:"SOC 2",url:"https://www.withum.com"},
+  {name:"Sensiba LLP",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Pleasanton, CA",certs:"SOC 2 & ISO 27001",url:"https://sensiba.com"},
+  {name:"Linford & Company",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Boulder, CO",certs:"SOC 2",url:"https://linfordco.com"},
+  {name:"KirkpatrickPrice",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Nashville, TN",certs:"SOC 2 & HITRUST",url:"https://kirkpatrickprice.com"},
+  {name:"Plante Moran",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Southfield, MI",certs:"SOC 2",url:"https://plantemoran.com"},
+  {name:"Cherry Bekaert",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Richmond, VA",certs:"SOC 2",url:"https://www.cbh.com"},
+  {name:"CohnReznick",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.cohnreznick.com"},
+  {name:"EisnerAmper",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.eisneramper.com"},
+  {name:"CliftonLarsonAllen (CLA)",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Minneapolis, MN",certs:"SOC 2",url:"https://www.cla-cpa.com"},
+  {name:"Prescient Assurance",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2 & ISO",url:"https://prescientassurance.com"},
+  {name:"360 Advanced",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"St Petersburg, FL",certs:"SOC 2",url:"https://360advanced.com"},
+  {name:"Armanino LLP",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"San Ramon, CA",certs:"SOC 2",url:"https://armanino.com"},
+  {name:"CyberSapiens",cat:"Consulting + Audit",price:"Custom",time:"Varies",hq:"San Jose, CA",certs:"SOC 2 & PCI‑DSS",url:"https://cybersapiens.com.au"},
+
+  /* === Compliance‑Automation Platforms === */
+  {name:"Secureframe",cat:"Automation Platform",price:"From $5k",time:"Weeks",hq:"San Francisco, CA",certs:"SOC 2, ISO 27001",url:"https://secureframe.com"},
+  {name:"Vanta",cat:"Automation Platform",price:"From $9.5k",time:"Weeks",hq:"San Francisco, CA",certs:"SOC 2, ISO 27001",url:"https://www.vanta.com"},
+  {name:"Drata",cat:"Automation Platform",price:"From $7k",time:"Weeks",hq:"San Diego, CA",certs:"SOC 2, ISO 27001",url:"https://drata.com"},
+  {name:"Strike Graph",cat:"Automation Platform",price:"From $6k",time:"Weeks",hq:"Seattle, WA",certs:"SOC 2, ISO 27001",url:"https://strikegraph.com"},
+  {name:"AuditBoard",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Los Angeles, CA",certs:"SOC 2, SOX",url:"https://auditboard.com"},
+  {name:"Tugboat Logic",cat:"Automation Platform",price:"From $6k",time:"Weeks",hq:"San Jose, CA",certs:"SOC 2, ISO 27001",url:"https://tugboatlogic.com"},
+  {name:"Hyperproof",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Bellevue, WA",certs:"SOC 2, ISO 27001",url:"https://hyperproof.io"},
+  {name:"LogicGate Risk Cloud",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Chicago, IL",certs:"SOC 2, GRC",url:"https://logicgate.com"},
+  {name:"OneTrust GRC",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Atlanta, GA",certs:"SOC 2, ISO",url:"https://onetrust.com"},
+  {name:"Apptega",cat:"Automation Platform",price:"From $4k",time:"Weeks",hq:"Atlanta, GA",certs:"SOC 2, NIST CSF",url:"https://apptega.com"},
+  {name:"Scytale",cat:"Automation Platform",price:"From $4k",time:"Weeks",hq:"Tel Aviv, IL",certs:"SOC 2, ISO 27001",url:"https://scytale.ai"},
+  {name:"Thoropass",cat:"Automation Platform",price:"From $5k",time:"Weeks",hq:"New York, NY",certs:"SOC 2, HIPAA",url:"https://thoropass.com"},
+  {name:"Laika",cat:"Automation Platform",price:"From $6k",time:"Weeks",hq:"New York, NY",certs:"SOC 2, ISO",url:"https://laika.com"},
+  {name:"Sprinto",cat:"Automation Platform",price:"From $5k",time:"Weeks",hq:"Bengaluru, IN",certs:"SOC 2, ISO 27001",url:"https://sprinto.com"},
+  {name:"TrustCloud",cat:"Automation Platform",price:"Free tier",time:"Weeks",hq:"Boston, MA",certs:"SOC 2, ISO 27001",url:"https://trustcloud.ai"},
+  {name:"JupiterOne",cat:"Automation Platform",price:"Free tier",time:"Weeks",hq:"Morrisville, NC",certs:"SOC 2, NIST CSF",url:"https://jupiterone.com"},
+  {name:"Compyl",cat:"Automation Platform",price:"From $3k",time:"Weeks",hq:"New York, NY",certs:"SOC 2, ISO",url:"https://compyl.com"},
+  {name:"Scrut Automation",cat:"Automation Platform",price:"From $4k",time:"Weeks",hq:"San Francisco, CA",certs:"SOC 2, ISO 27001",url:"https://scrut.io"},
+  {name:"Anecdotes",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Tel Aviv, IL",certs:"SOC 2, ISO",url:"https://anecdotes.ai"},
+  {name:"Carbide (Securicy)",cat:"Automation Platform",price:"From $3k",time:"Weeks",hq:"Halifax, NS",certs:"SOC 2, ISO",url:"https://carbidesecure.com"},
+  {name:"Akitra Comply",cat:"Automation Platform",price:"From $4k",time:"Weeks",hq:"Mountain View, CA",certs:"SOC 2, ISO 27001",url:"https://akitra.com"},
+  {name:"LogicManager",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Boston, MA",certs:"SOC 2, ERM",url:"https://logicmanager.com"},
+  {name:"Ostendio",cat:"Automation Platform",price:"From $3k",time:"Weeks",hq:"Arlington, VA",certs:"SOC 2, HIPAA",url:"https://ostendio.com"},
+  {name:"SafeBase",cat:"Trust Center",price:"From $2k",time:"Weeks",hq:"San Francisco, CA",certs:"SOC 2 Readiness",url:"https://safebase.io"},
+  {name:"Aptible Comply",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"New York, NY",certs:"SOC 2, HIPAA",url:"https://aptible.com"},
+  {name:"RiskOptics ZenGRC",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Austin, TX",certs:"SOC 2, FedRAMP",url:"https://riskoptics.com"}
+];
+
+/* -------- Blog Data -------- */
+const blogPosts=[
+  {title:"SOC 2 vs ISO 27001: Which One First?",date:"2025‑06‑30",excerpt:"Trying to decide whether to pursue SOC 2 or ISO 27001? We break down the pros, cons, and costs for fast‑growing startups.",img:"https://images.unsplash.com/photo-1581091012184-7f5bb97e20e6?auto=format&fit=crop&w=800&q=60",url:"blog.html"},
+  {title:"How Much Does a SOC 2 Audit Cost in 2025?",date:"2025‑05‑15",excerpt:"We crowdsourced pricing from 120 startups to give you the real‑world medians—and where you can save.",img:"https://images.unsplash.com/photo-1591696205602-2e3a0f36fa2f?auto=format&fit=crop&w=800&q=60",url:"blog.html"},
+  {title:"Building a Continuous Compliance Culture",date:"2025‑04‑20",excerpt:"Tools and processes to keep your controls audit‑ready all year round, without slowing product velocity.",img:"https://images.unsplash.com/photo-1492724441997-5dc865305da8?auto=format&fit=crop&w=800&q=60",url:"blog.html"}
+];
+
+/* -------- Render Helpers -------- */
+function renderVendors(){
+  const tbody=document.getElementById('vendorBody');
+  vendorData.forEach(v=>{
+    const row=`<tr>
+      <td><a href="${v.url}" class="text-decoration-none fw-semibold" target="_blank" rel="noopener">${v.name}</a></td>
+      <td>${v.cat}</td>
+      <td>${v.price}</td>
+      <td>${v.time}</td>
+      <td>${v.hq}</td>
+      <td>${v.certs}</td>
+      <td><a href="${v.url}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Visit</a></td>
+    </tr>`;
+    tbody.insertAdjacentHTML('beforeend',row);
+  });
+}
+
+function renderBlogs(){
+  const grid=document.getElementById('blogGrid');
+  blogPosts.forEach(b=>{
+    const card=`<div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="${b.img}" class="card-img-top" alt="">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${b.title}</h5>
+          <p class="card-text small text-muted mb-2">${b.date}</p>
+          <p class="card-text flex-grow-1">${b.excerpt}</p>
+          <a href="${b.url}" class="btn btn-primary btn-sm mt-auto">Read More</a>
+        </div>
+      </div>
+    </div>`;
+    grid.insertAdjacentHTML('beforeend',card);
+  });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  renderVendors();
+  renderBlogs();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
