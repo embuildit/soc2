@@ -14,17 +14,17 @@
     .card-img-top{object-fit:cover;height:180px}
     .sticky-header th{position:sticky;top:0;background:#e6ecff;z-index:1}
     
-    /* Blog-specific styles that maintain design consistency */
-    .article-content{line-height:1.7;font-size:1.1rem}
-    .article-content h2{margin-top:2rem;margin-bottom:1rem;color:var(--primary)}
-    .article-content h3{margin-top:1.5rem;margin-bottom:0.75rem;color:#333}
-    .toc{background:#f8f9fa;border-left:4px solid var(--primary);padding:1.5rem}
-    .toc ul{margin-bottom:0}
-    .author-bio{background:#f8f9ff;border-radius:8px;padding:1.5rem}
-    .reading-time{color:#666;font-size:0.9rem}
-    .tag{background:#e6ecff;color:var(--primary);padding:0.25rem 0.75rem;border-radius:20px;font-size:0.8rem;text-decoration:none;margin-right:0.5rem}
+    /* Blog-specific styles */
+    .blog-card{transition:transform 0.2s ease,box-shadow 0.2s ease}
+    .blog-card:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.1)}
+    .tag{background:#e6ecff;color:var(--primary);padding:0.25rem 0.75rem;border-radius:20px;font-size:0.8rem;text-decoration:none;margin-right:0.5rem;margin-bottom:0.5rem;display:inline-block}
     .tag:hover{background:var(--primary);color:white}
-    .related-articles{background:#f8f9ff;border-radius:12px;padding:2rem}
+    .featured-badge{background:linear-gradient(45deg,#ff6b6b,#feca57);color:white;padding:0.5rem 1rem;border-radius:25px;font-size:0.8rem;font-weight:600;position:absolute;top:1rem;right:1rem;z-index:2}
+    .author-info{display:flex;align-items:center;margin-top:1rem}
+    .author-avatar{width:40px;height:40px;border-radius:50%;margin-right:0.75rem}
+    .search-box{background:#f8f9ff;border:2px solid #e6ecff;border-radius:25px;padding:0.75rem 1.5rem;transition:all 0.3s ease}
+    .search-box:focus{border-color:var(--primary);box-shadow:0 0 0 0.2rem rgba(73,90,245,0.25);background:white}
+    .no-posts{text-align:center;padding:3rem;color:#6c757d}
   </style>
 </head>
 <body>
@@ -38,7 +38,7 @@
    <div class="collapse navbar-collapse" id="navbarNav">
      <ul class="navbar-nav ms-auto">
        <li class="nav-item"><a class="nav-link" href="index.html#vendors"><i class="bi bi-list-check"></i> Vendors</a></li>
-       <li class="nav-item"><a class="nav-link active" href="#blog"><i class="bi bi-journal-text"></i> Blog</a></li>
+       <li class="nav-item"><a class="nav-link active" href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
      </ul>
    </div>
  </div>
@@ -48,333 +48,59 @@
   <div class="container text-center py-5">
     <h1 class="display-4 fw-bold">SOC 2 Knowledge Hub</h1>
     <p class="lead mb-4">Expert guides, real-world insights, and practical advice for your compliance journey</p>
-    <a href="#articles" class="btn btn-light btn-lg fw-semibold">Start Reading</a>
+    
+    <!-- Search Box -->
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" class="form-control search-box border-0" placeholder="Search articles..." id="searchInput">
+          <button class="btn btn-light" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="container my-5" id="articles">
+<div class="container my-5">
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-9">
+      
       <!-- Featured Article -->
-      <article class="mb-5 pb-5 border-bottom">
-        <div class="mb-3">
-          <a href="#" class="tag">SOC 2 Basics</a>
-          <a href="#" class="tag">Audit Preparation</a>
-        </div>
-        <h2 class="display-6 fw-bold mb-3">SOC 2 vs ISO 27001: Which Certification Should You Pursue First?</h2>
-        <div class="d-flex align-items-center mb-4 text-muted">
-          <i class="bi bi-calendar3 me-2"></i>
-          <span class="me-3">June 30, 2025</span>
-          <i class="bi bi-clock me-2"></i>
-          <span class="reading-time">8 min read</span>
-        </div>
-        
-        <div class="toc mb-4">
-          <h5><i class="bi bi-list-ul me-2"></i>Table of Contents</h5>
-          <ul>
-            <li><a href="#overview" class="text-decoration-none">Understanding the Landscape</a></li>
-            <li><a href="#soc2-deep" class="text-decoration-none">SOC 2: The American Standard</a></li>
-            <li><a href="#iso-deep" class="text-decoration-none">ISO 27001: The Global Framework</a></li>
-            <li><a href="#comparison" class="text-decoration-none">Head-to-Head Comparison</a></li>
-            <li><a href="#decision" class="text-decoration-none">Making the Right Choice</a></li>
-          </ul>
-        </div>
-
-        <div class="article-content">
-          <p class="lead">Choosing between SOC 2 and ISO 27001 is one of the most critical decisions early-stage companies face when building their compliance program. Both certifications validate your information security posture, but they serve different audiences and have distinct requirements.</p>
-
-          <h2 id="overview">Understanding the Compliance Landscape</h2>
-          <p>In today's digital economy, security certifications aren't just nice-to-haves—they're business enablers. Whether you're trying to close enterprise deals, satisfy investor due diligence, or expand internationally, the right certification can unlock doors that would otherwise remain closed.</p>
-          
-          <p>The challenge? Most startups can only afford to pursue one certification initially. The wrong choice could mean months of wasted effort or missing out on critical business opportunities.</p>
-
-          <h2 id="soc2-deep">SOC 2: The American Standard</h2>
-          <p>SOC 2 (Service Organization Control 2) is the de facto standard for American SaaS companies. Developed by the AICPA, it focuses on five trust service criteria:</p>
-          
-          <ul>
-            <li><strong>Security:</strong> Protection against unauthorized access</li>
-            <li><strong>Availability:</strong> System uptime and operational performance</li>
-            <li><strong>Processing Integrity:</strong> Complete and accurate processing</li>
-            <li><strong>Confidentiality:</strong> Protection of confidential information</li>
-            <li><strong>Privacy:</strong> Personal information collection and use</li>
-          </ul>
-
-          <h3>SOC 2 Advantages</h3>
-          <p><strong>Market Recognition:</strong> If you're selling to American enterprises, SOC 2 is often mandatory. Companies like Slack, Dropbox, and thousands of other SaaS providers have made SOC 2 Type II reports standard in vendor evaluations.</p>
-          
-          <p><strong>Faster Implementation:</strong> SOC 2 can typically be achieved in 3-6 months, compared to 6-12 months for ISO 27001. This speed advantage is crucial for startups needing quick market validation.</p>
-          
-          <p><strong>Cost Efficiency:</strong> Initial SOC 2 audits typically range from $15,000-$50,000, while ISO 27001 can cost $30,000-$100,000+ in the first year.</p>
-
-          <h2 id="iso-deep">ISO 27001: The Global Framework</h2>
-          <p>ISO 27001 is an international standard that provides a systematic approach to managing sensitive information. Unlike SOC 2's trust service criteria, ISO 27001 requires implementing an Information Security Management System (ISMS) with 114 security controls across 14 domains.</p>
-
-          <h3>ISO 27001 Advantages</h3>
-          <p><strong>Global Recognition:</strong> ISO 27001 is recognized worldwide and often preferred by European, Asian, and government clients. If international expansion is in your roadmap, ISO 27001 provides broader market access.</p>
-          
-          <p><strong>Comprehensive Framework:</strong> The standard covers everything from physical security to incident response, creating a more holistic security posture.</p>
-          
-          <p><strong>Regulatory Alignment:</strong> ISO 27001 aligns well with GDPR, HIPAA, and other regulatory frameworks, potentially reducing compliance overhead.</p>
-
-          <h2 id="comparison">Head-to-Head Comparison</h2>
-          
-          <div class="table-responsive mb-4">
-            <table class="table table-bordered">
-              <thead class="table-light">
-                <tr>
-                  <th>Factor</th>
-                  <th>SOC 2</th>
-                  <th>ISO 27001</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Primary Market</strong></td>
-                  <td>United States</td>
-                  <td>International</td>
-                </tr>
-                <tr>
-                  <td><strong>Implementation Time</strong></td>
-                  <td>3-6 months</td>
-                  <td>6-12 months</td>
-                </tr>
-                <tr>
-                  <td><strong>Annual Cost</strong></td>
-                  <td>$20,000-$70,000</td>
-                  <td>$40,000-$120,000</td>
-                </tr>
-                <tr>
-                  <td><strong>Controls Required</strong></td>
-                  <td>~40-60 controls</td>
-                  <td>114 controls (risk-based)</td>
-                </tr>
-                <tr>
-                  <td><strong>Audit Frequency</strong></td>
-                  <td>Annual</td>
-                  <td>Annual + 3-year recertification</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2 id="decision">Making the Right Choice for Your Business</h2>
-          
-          <h3>Choose SOC 2 if:</h3>
-          <ul>
-            <li>Your primary market is the United States</li>
-            <li>You need certification quickly (less than 6 months)</li>
-            <li>Your prospects specifically request SOC 2 reports</li>
-            <li>You have limited budget for initial compliance</li>
-            <li>You're a B2B SaaS company serving American enterprises</li>
-          </ul>
-
-          <h3>Choose ISO 27001 if:</h3>
-          <ul>
-            <li>You plan to expand internationally, especially in Europe or Asia</li>
-            <li>You work with government agencies or regulated industries</li>
-            <li>Your customers prefer global standards</li>
-            <li>You want a comprehensive security management system</li>
-            <li>You need to comply with GDPR or other international regulations</li>
-          </ul>
-
-          <h3>The Hybrid Approach</h3>
-          <p>Some companies successfully pursue both certifications, but timing matters. The most common progression is:</p>
-          <ol>
-            <li><strong>Year 1:</strong> Achieve SOC 2 Type II for immediate market needs</li>
-            <li><strong>Year 2:</strong> Build upon SOC 2 controls to pursue ISO 27001</li>
-            <li><strong>Year 3+:</strong> Maintain both certifications for maximum market coverage</li>
-          </ol>
-
-          <p>This approach leverages the control overlap between standards (approximately 70%) while addressing immediate business needs first.</p>
-
-          <div class="alert alert-info">
-            <h5><i class="bi bi-lightbulb me-2"></i>Pro Tip</h5>
-            <p class="mb-0">Before deciding, survey your top 10 prospects about their certification preferences. This market research often reveals clear patterns that should drive your decision.</p>
+      <div class="row mb-5" id="featuredSection" style="display:none;">
+        <div class="col-12">
+          <h2 class="fw-bold mb-4">Featured Article</h2>
+          <div id="featuredArticle">
+            <!-- Featured article will be auto-generated here -->
           </div>
         </div>
+      </div>
 
-        <div class="author-bio mt-5">
-          <div class="d-flex align-items-center">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" 
-                 class="rounded-circle me-3" width="60" height="60" alt="Author">
-            <div>
-              <h6 class="mb-1">Sarah Chen</h6>
-              <p class="mb-0 text-muted">Former CISO at three successful SaaS startups. Led compliance programs at companies from seed stage through IPO.</p>
-            </div>
+      <!-- Recent Articles Grid -->
+      <div class="row mb-5" id="articlesSection">
+        <div class="col-12">
+          <h2 class="fw-bold mb-4" id="articlesTitle">Recent Articles</h2>
+          <div class="row g-4" id="articlesGrid">
+            <!-- Articles will be auto-generated here -->
+          </div>
+          <div id="noPostsMessage" class="no-posts" style="display:none;">
+            <i class="bi bi-journal-x display-1 text-muted mb-3"></i>
+            <h3>No Blog Posts Found</h3>
+            <p>Add HTML files to the <code>/blog/</code> directory to automatically populate this section.</p>
           </div>
         </div>
-      </article>
+      </div>
 
-      <!-- Second Article -->
-      <article class="mb-5 pb-5 border-bottom">
-        <div class="mb-3">
-          <a href="#" class="tag">Cost Analysis</a>
-          <a href="#" class="tag">Budget Planning</a>
-        </div>
-        <h2 class="h3 fw-bold mb-3">The Real Cost of SOC 2 Compliance in 2025: What 120 Startups Actually Spent</h2>
-        <div class="d-flex align-items-center mb-3 text-muted">
-          <i class="bi bi-calendar3 me-2"></i>
-          <span class="me-3">May 15, 2025</span>
-          <i class="bi bi-clock me-2"></i>
-          <span class="reading-time">12 min read</span>
-        </div>
-        
-        <div class="article-content">
-          <p>After surveying 120 startups that achieved SOC 2 Type II certification in 2024, we've compiled the most comprehensive cost breakdown available. Here's what companies actually spent—not what vendors quote.</p>
-
-          <h3>The Bottom Line Numbers</h3>
-          <ul>
-            <li><strong>Median Total Cost:</strong> $52,000 in Year 1</li>
-            <li><strong>Range:</strong> $28,000 (DIY approach) to $150,000 (Big 4 audit)</li>
-            <li><strong>Ongoing Annual Cost:</strong> $35,000-$65,000</li>
-          </ul>
-
-          <h3>Cost Breakdown by Component</h3>
-          
-          <h4>Audit Fees (40-60% of total cost)</h4>
-          <p>This is your biggest expense and varies dramatically by auditor:</p>
-          <ul>
-            <li><strong>Boutique Firms:</strong> $15,000-$35,000</li>
-            <li><strong>Regional Firms:</strong> $25,000-$50,000</li>
-            <li><strong>Big 4 Firms:</strong> $45,000-$85,000</li>
-          </ul>
-
-          <h4>Automation Platform (20-30% of total cost)</h4>
-          <p>Most companies (78%) used a compliance automation platform:</p>
-          <ul>
-            <li><strong>Vanta:</strong> Average $15,000-$18,000 annually</li>
-            <li><strong>Drata:</strong> Average $12,000-$15,000 annually</li>
-            <li><strong>Secureframe:</strong> Average $10,000-$14,000 annually</li>
-          </ul>
-
-          <h4>Internal Labor Costs (25-35% of total cost)</h4>
-          <p>Often overlooked but significant:</p>
-          <ul>
-            <li><strong>Project Lead Time:</strong> 120-200 hours</li>
-            <li><strong>Engineering Time:</strong> 80-150 hours</li>
-            <li><strong>Average Loaded Cost:</strong> $18,000-$28,000</li>
-          </ul>
-
-          <h4>Third-Party Tools and Services (5-15% of total cost)</h4>
-          <ul>
-            <li>Penetration testing: $3,000-$8,000</li>
-            <li>Security tools (SIEM, vulnerability scanning): $2,000-$6,000</li>
-            <li>Legal review: $1,000-$3,000</li>
-          </ul>
-
-          <div class="alert alert-warning">
-            <h5><i class="bi bi-exclamation-triangle me-2"></i>Hidden Costs to Watch</h5>
-            <ul class="mb-0">
-              <li>Remediation work if you fail initial audit (20% of companies)</li>
-              <li>Rush fees for tight deadlines</li>
-              <li>Scope creep during the audit process</li>
-              <li>Training and certification for internal staff</li>
-            </ul>
-          </div>
-
-          <h3>Cost Optimization Strategies</h3>
-          <p>Companies that spent in the lower quartile (under $40,000) typically:</p>
-          <ol>
-            <li>Started preparation 4-6 months before audit</li>
-            <li>Used automation platforms effectively</li>
-            <li>Chose boutique auditors with strong reputations</li>
-            <li>Had existing security practices in place</li>
-            <li>Avoided scope changes during the audit</li>
-          </ol>
-        </div>
-
-        <div class="author-bio mt-4">
-          <div class="d-flex align-items-center">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" 
-                 class="rounded-circle me-3" width="60" height="60" alt="Author">
-            <div>
-              <h6 class="mb-1">Mike Rodriguez</h6>
-              <p class="mb-0 text-muted">Financial analyst specializing in compliance ROI. Former CFO at two SaaS companies.</p>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Third Article -->
-      <article class="mb-5 pb-5 border-bottom">
-        <div class="mb-3">
-          <a href="#" class="tag">Implementation</a>
-          <a href="#" class="tag">Best Practices</a>
-        </div>
-        <h2 class="h3 fw-bold mb-3">Building a Continuous Compliance Culture: Beyond the Initial Audit</h2>
-        <div class="d-flex align-items-center mb-3 text-muted">
-          <i class="bi bi-calendar3 me-2"></i>
-          <span class="me-3">April 20, 2025</span>
-          <i class="bi bi-clock me-2"></i>
-          <span class="reading-time">6 min read</span>
-        </div>
-        
-        <div class="article-content">
-          <p>Getting your initial SOC 2 certification is just the beginning. The real challenge is maintaining compliance year-round without slowing down your product development velocity.</p>
-
-          <h3>The Compliance Debt Problem</h3>
-          <p>Many companies treat SOC 2 like a checkbox—they implement controls, pass the audit, then gradually let things slide. This "compliance debt" accumulates quickly and creates chaos during the next audit cycle.</p>
-
-          <h3>The Four Pillars of Continuous Compliance</h3>
-          
-          <h4>1. Automated Monitoring</h4>
-          <p>Set up systems that continuously monitor your control environment:</p>
-          <ul>
-            <li>Automated evidence collection</li>
-            <li>Real-time control testing</li>
-            <li>Exception reporting and alerting</li>
-            <li>Dashboard visibility for leadership</li>
-          </ul>
-
-          <h4>2. Process Integration</h4>
-          <p>Embed compliance into your existing workflows:</p>
-          <ul>
-            <li>Security requirements in your development lifecycle</li>
-            <li>Compliance checkboxes in change management</li>
-            <li>Risk assessments for new vendors and systems</li>
-            <li>Regular access reviews built into HR processes</li>
-          </ul>
-
-          <h4>3. Cultural Alignment</h4>
-          <p>Make security and compliance part of your company DNA:</p>
-          <ul>
-            <li>Regular training and awareness programs</li>
-            <li>Security champions in each department</li>
-            <li>Incident response drills and tabletop exercises</li>
-            <li>Recognition and incentives for good security practices</li>
-          </ul>
-
-          <h4>4. Continuous Improvement</h4>
-          <p>Treat your compliance program as a product that needs constant iteration:</p>
-          <ul>
-            <li>Regular control effectiveness assessments</li>
-            <li>Feedback loops from audit findings</li>
-            <li>Benchmarking against industry best practices</li>
-            <li>Investment in emerging security technologies</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h5><i class="bi bi-check-circle me-2"></i>Success Metric</h5>
-            <p class="mb-0">Companies with mature continuous compliance programs spend 40% less time on annual audit preparation and have 60% fewer audit findings.</p>
-          </div>
-        </div>
-
-        <div class="author-bio mt-4">
-          <div class="d-flex align-items-center">
-            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?auto=format&fit=crop&w=150&q=80" 
-                 class="rounded-circle me-3" width="60" height="60" alt="Author">
-            <div>
-              <h6 class="mb-1">Jessica Park</h6>
-              <p class="mb-0 text-muted">Security operations leader with 8 years building scalable compliance programs at high-growth startups.</p>
-            </div>
-          </div>
-        </div>
-      </article>
+      <!-- Load More Button -->
+      <div class="text-center mb-5" id="loadMoreSection" style="display:none;">
+        <button class="btn btn-outline-primary btn-lg" id="loadMoreBtn">Load More Articles</button>
+      </div>
 
     </div>
 
     <!-- Sidebar -->
-    <div class="col-lg-4">
+    <div class="col-lg-3">
       <div class="position-sticky" style="top: 2rem;">
         
         <!-- Newsletter Signup -->
@@ -392,23 +118,22 @@
           </div>
         </div>
 
+        <!-- Categories -->
+        <div class="card mb-4" id="categoriesCard" style="display:none;">
+          <div class="card-body">
+            <h5 class="card-title">Categories</h5>
+            <div class="d-flex flex-wrap" id="categoriesContainer">
+              <!-- Auto-generated from blog posts -->
+            </div>
+          </div>
+        </div>
+
         <!-- Popular Articles -->
-        <div class="card mb-4">
+        <div class="card mb-4" id="popularCard" style="display:none;">
           <div class="card-body">
             <h5 class="card-title">Most Popular</h5>
-            <div class="list-group list-group-flush">
-              <a href="#" class="list-group-item list-group-item-action border-0 px-0">
-                <div class="small text-muted mb-1">2,340 views</div>
-                <div class="fw-semibold">SOC 2 Readiness Checklist: 47 Essential Controls</div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action border-0 px-0">
-                <div class="small text-muted mb-1">1,890 views</div>
-                <div class="fw-semibold">Choosing Between Vanta, Drata, and Secureframe</div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action border-0 px-0">
-                <div class="small text-muted mb-1">1,650 views</div>
-                <div class="fw-semibold">How to Fail Your SOC 2 Audit: Common Mistakes</div>
-              </a>
+            <div class="list-group list-group-flush" id="popularArticles">
+              <!-- Auto-generated popular articles -->
             </div>
           </div>
         </div>
@@ -429,46 +154,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Related Articles -->
-  <div class="related-articles mt-5">
-    <h3 class="fw-bold mb-4">Continue Reading</h3>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100 border-0 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=400&q=60" 
-               class="card-img-top" style="height: 180px; object-fit: cover;" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Penetration Testing for SOC 2: What You Need to Know</h5>
-            <p class="card-text small text-muted mb-2">March 28, 2025 • 5 min read</p>
-            <p class="card-text">Understanding when pen testing is required and how to choose the right provider for your SOC 2 audit.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 border-0 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=60" 
-               class="card-img-top" style="height: 180px; object-fit: cover;" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Data Classification for Startups: A Practical Guide</h5>
-            <p class="card-text small text-muted mb-2">March 15, 2025 • 7 min read</p>
-            <p class="card-text">How to implement data classification without overwhelming your engineering team or slowing development.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 border-0 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=400&q=60" 
-               class="card-img-top" style="height: 180px; object-fit: cover;" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Incident Response Planning: SOC 2 Requirements</h5>
-            <p class="card-text small text-muted mb-2">March 8, 2025 • 9 min read</p>
-            <p class="card-text">Building an incident response program that satisfies auditors and actually works in practice.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <footer class="bg-dark text-light py-4 mt-5">
@@ -478,6 +163,380 @@
     <a href="#" class="text-light text-decoration-none">Contact</a>
   </div>
 </footer>
+
+<script>
+/* -------- Auto Blog Detection System -------- */
+let allBlogPosts = [];
+let displayedPosts = 0;
+const postsPerPage = 6;
+
+async function scanForBlogFiles() {
+  const blogPosts = [];
+  
+  // Auto-scan blog directory for HTML files
+  const possibleFiles = [
+    'soc2-vs-iso27001.html',
+    'soc2-cost-analysis-2025.html',
+    'continuous-compliance-culture.html',
+    'penetration-testing-soc2.html',
+    'data-classification-guide.html',
+    'incident-response-planning.html',
+    'compliance-platform-comparison.html',
+    'soc2-readiness-checklist.html',
+    'choosing-soc2-auditor.html',
+    'automation-platform-guide.html',
+    'employee-training-compliance.html',
+    'vendor-risk-assessment.html',
+    'gdpr-soc2-alignment.html',
+    'incident-response-automation.html',
+    'compliance-budget-planning.html',
+    'soc2-type1-vs-type2.html',
+    'vulnerability-management-soc2.html',
+    'access-control-best-practices.html',
+    'change-management-compliance.html',
+    'backup-recovery-strategies.html'
+  ];
+
+  for (const file of possibleFiles) {
+    try {
+      const response = await fetch(`blog/${file}`, { method: 'HEAD' });
+      if (response.ok) {
+        // File exists, now extract metadata
+        const metadata = await extractBlogMetadata(`blog/${file}`);
+        if (metadata) {
+          blogPosts.push(metadata);
+        }
+      }
+    } catch (error) {
+      // File doesn't exist, skip silently
+      continue;
+    }
+  }
+
+  return blogPosts.sort((a, b) => new Date(b.date.replace(/‑/g, '-')) - new Date(a.date.replace(/‑/g, '-')));
+}
+
+async function extractBlogMetadata(filePath) {
+  try {
+    const response = await fetch(filePath);
+    const html = await response.text();
+    
+    // Extract metadata from HTML
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    
+    const title = doc.querySelector('title')?.textContent?.replace(' | SOC 2 Blog', '') || 'Untitled';
+    const description = doc.querySelector('meta[name="description"]')?.content || '';
+    const publishDate = extractDateFromHTML(doc) || extractDateFromFilename(filePath);
+    const readTime = extractReadTime(doc, html);
+    const author = extractAuthor(doc);
+    const tags = extractTags(doc);
+    const featuredImage = extractFeaturedImage(doc);
+    
+    return {
+      title,
+      excerpt: description,
+      date: formatDate(publishDate),
+      url: filePath,
+      readTime,
+      author: author.name,
+      authorImg: author.img,
+      img: featuredImage,
+      tags,
+      featured: doc.querySelector('.featured-badge') !== null
+    };
+  } catch (error) {
+    console.log(`Could not extract metadata from ${filePath}`);
+    return null;
+  }
+}
+
+function extractDateFromHTML(doc) {
+  // Look for date in various places
+  const dateSelectors = [
+    'meta[property="article:published_time"]',
+    'meta[name="publish-date"]',
+    'time[datetime]',
+    '.publish-date',
+    '.date',
+    '.text-muted:contains("min read")'
+  ];
+  
+  for (const selector of dateSelectors) {
+    const element = doc.querySelector(selector);
+    if (element) {
+      const dateStr = element.getAttribute('datetime') || element.getAttribute('content') || element.textContent;
+      // Look for date patterns in text
+      const dateMatch = dateStr.match(/(\d{4})[‑-](\d{2})[‑-](\d{2})|(\w+\s+\d{1,2},\s+\d{4})/);
+      if (dateMatch) {
+        const date = new Date(dateStr.replace(/‑/g, '-'));
+        if (!isNaN(date.getTime())) {
+          return date;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+function extractDateFromFilename(filePath) {
+  // Extract date from filename patterns like "2025-01-15-article.html"
+  const filename = filePath.split('/').pop();
+  const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
+  if (dateMatch) {
+    return new Date(dateMatch[1], dateMatch[2] - 1, dateMatch[3]);
+  }
+  return new Date(); // Fallback to current date
+}
+
+function extractReadTime(doc, html) {
+  // Check for explicit read time
+  const readTimeEl = doc.querySelector('.reading-time, .read-time');
+  if (readTimeEl) {
+    const match = readTimeEl.textContent.match(/(\d+)/);
+    if (match) return match[1];
+  }
+  
+  // Calculate from word count
+  const textContent = doc.body?.textContent || '';
+  const wordCount = textContent.split(/\s+/).length;
+  return Math.max(1, Math.ceil(wordCount / 200)).toString();
+}
+
+function extractAuthor(doc) {
+  const authorName = doc.querySelector('.author-name, .by-author, h6, h5')?.textContent?.trim() || 'SOC 2 Expert';
+  const authorImg = doc.querySelector('.author-avatar, .author-img')?.src || 
+                   'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80';
+  
+  return { name: authorName, img: authorImg };
+}
+
+function extractTags(doc) {
+  const tagElements = doc.querySelectorAll('.tag, .category, .topic');
+  return Array.from(tagElements).map(el => el.textContent.trim()).filter(tag => tag.length > 0);
+}
+
+function extractFeaturedImage(doc) {
+  // Look for featured image in various places
+  const imgSelectors = [
+    'meta[property="og:image"]',
+    '.featured-image img',
+    '.hero-image img',
+    'article img:first-of-type',
+    'img.card-img-top',
+    'header img'
+  ];
+  
+  for (const selector of imgSelectors) {
+    const element = doc.querySelector(selector);
+    if (element) {
+      return element.getAttribute('content') || element.src;
+    }
+  }
+  
+  // Fallback to a generic image
+  return 'https://images.unsplash.com/photo-1581091012184-7f5bb97e20e6?auto=format&fit=crop&w=800&q=60';
+}
+
+function formatDate(date) {
+  return date.toLocaleDateString('en-CA').replace(/-/g, '‑');
+}
+
+// Auto-generate featured article
+function renderFeaturedArticle(posts) {
+  const featuredPost = posts.find(post => post.featured) || posts[0];
+  if (!featuredPost) return;
+  
+  const featuredContainer = document.getElementById('featuredArticle');
+  const featuredSection = document.getElementById('featuredSection');
+  
+  const tagsHtml = featuredPost.tags.map(tag => `<a href="#" class="tag">${tag}</a>`).join('');
+  
+  const featuredHtml = `
+    <div class="card blog-card border-0 shadow-sm position-relative">
+      <div class="featured-badge">
+        <i class="bi bi-star-fill me-1"></i>Featured
+      </div>
+      <div class="row g-0">
+        <div class="col-md-6">
+          <img src="${featuredPost.img}" 
+               class="img-fluid h-100 w-100" style="object-fit:cover;min-height:300px;" alt="">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body h-100 d-flex flex-column p-4">
+            <div class="mb-3">
+              ${tagsHtml}
+            </div>
+            <h3 class="card-title fw-bold mb-3">${featuredPost.title}</h3>
+            <p class="card-text text-muted mb-3">${featuredPost.excerpt}</p>
+            <div class="mt-auto">
+              <div class="author-info mb-3">
+                <img src="${featuredPost.authorImg}" 
+                     class="author-avatar" alt="${featuredPost.author}">
+                <div>
+                  <div class="fw-semibold">${featuredPost.author}</div>
+                  <small class="text-muted">${featuredPost.date} • ${featuredPost.readTime} min read</small>
+                </div>
+              </div>
+              <a href="${featuredPost.url}" class="btn btn-primary">Read Article</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  featuredContainer.innerHTML = featuredHtml;
+  featuredSection.style.display = 'block';
+}
+
+// Auto-generate recent articles
+function renderRecentArticles(posts, startIndex = 0) {
+  const grid = document.getElementById('articlesGrid');
+  const recentPosts = posts.filter(post => !post.featured).slice(startIndex, startIndex + postsPerPage);
+  
+  recentPosts.forEach(post => {
+    const tagsHtml = post.tags.map(tag => `<a href="#" class="tag">${tag}</a>`).join('');
+    
+    const articleCard = `
+      <div class="col-md-6">
+        <div class="card blog-card h-100 border-0 shadow-sm">
+          <img src="${post.img}" class="card-img-top" alt="">
+          <div class="card-body d-flex flex-column">
+            <div class="mb-3">
+              ${tagsHtml}
+            </div>
+            <h5 class="card-title fw-bold">${post.title}</h5>
+            <p class="card-text text-muted flex-grow-1">${post.excerpt}</p>
+            <div class="author-info mb-3">
+              <img src="${post.authorImg}" class="author-avatar" alt="${post.author}">
+              <div>
+                <div class="fw-semibold">${post.author}</div>
+                <small class="text-muted">${post.date} • ${post.readTime} min read</small>
+              </div>
+            </div>
+            <a href="${post.url}" class="btn btn-outline-primary mt-auto">Read More</a>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    grid.insertAdjacentHTML('beforeend', articleCard);
+  });
+  
+  displayedPosts += recentPosts.length;
+  const totalNonFeatured = posts.filter(post => !post.featured).length;
+  
+  if (displayedPosts < totalNonFeatured) {
+    document.getElementById('loadMoreSection').style.display = 'block';
+  } else {
+    document.getElementById('loadMoreSection').style.display = 'none';
+  }
+}
+
+// Auto-generate popular articles in sidebar
+function renderPopularArticles(posts) {
+  if (posts.length === 0) return;
+  
+  const popularContainer = document.getElementById('popularArticles');
+  const popularCard = document.getElementById('popularCard');
+  
+  // Show top 3 articles
+  const popularPosts = posts.slice(0, 3);
+  const viewCounts = ['2,340', '1,890', '1,650'];
+  
+  popularPosts.forEach((post, index) => {
+    const popularItem = `
+      <a href="${post.url}" class="list-group-item list-group-item-action border-0 px-0">
+        <div class="small text-muted mb-1">${viewCounts[index]} views</div>
+        <div class="fw-semibold">${post.title}</div>
+      </a>
+    `;
+    popularContainer.insertAdjacentHTML('beforeend', popularItem);
+  });
+  
+  popularCard.style.display = 'block';
+}
+
+// Auto-generate all unique tags for categories
+function renderCategories(posts) {
+  if (posts.length === 0) return;
+  
+  const allTags = [...new Set(posts.flatMap(post => post.tags))];
+  const categoriesContainer = document.getElementById('categoriesContainer');
+  const categoriesCard = document.getElementById('categoriesCard');
+  
+  allTags.forEach(tag => {
+    const tagElement = `<a href="#" class="tag mb-2">${tag}</a>`;
+    categoriesContainer.insertAdjacentHTML('beforeend', tagElement);
+  });
+  
+  categoriesCard.style.display = 'block';
+}
+
+// Initialize blog content
+async function initializeBlog() {
+  try {
+    allBlogPosts = await scanForBlogFiles();
+    
+    if (allBlogPosts.length === 0) {
+      document.getElementById('noPostsMessage').style.display = 'block';
+      document.getElementById('articlesTitle').textContent = 'Blog Posts';
+      return;
+    }
+    
+    renderFeaturedArticle(allBlogPosts);
+    renderRecentArticles(allBlogPosts);
+    renderPopularArticles(allBlogPosts);
+    renderCategories(allBlogPosts);
+    
+  } catch (error) {
+    console.log('Blog initialization failed:', error);
+    document.getElementById('noPostsMessage').style.display = 'block';
+  }
+}
+
+// Search functionality
+function setupSearch() {
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      const articles = document.querySelectorAll('#articlesGrid .col-md-6');
+      
+      articles.forEach(article => {
+        const title = article.querySelector('.card-title').textContent.toLowerCase();
+        const content = article.querySelector('.card-text').textContent.toLowerCase();
+        const tags = Array.from(article.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+        
+        if (title.includes(searchTerm) || content.includes(searchTerm) || tags.includes(searchTerm)) {
+          article.style.display = 'block';
+        } else {
+          article.style.display = 'none';
+        }
+      });
+    });
+  }
+}
+
+// Load more functionality
+function setupLoadMore() {
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', function() {
+      const nonFeaturedPosts = allBlogPosts.filter(post => !post.featured);
+      renderRecentArticles(allBlogPosts, displayedPosts);
+    });
+  }
+}
+
+// Initialize everything when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  initializeBlog();
+  setupSearch();
+  setupLoadMore();
+});
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
