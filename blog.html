@@ -140,6 +140,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="blog.html">Blog</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -241,9 +244,9 @@
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="d-flex gap-3 justify-content-md-end">
-                        <a href="#" class="text-light text-decoration-none">Privacy Policy</a>
-                        <a href="#" class="text-light text-decoration-none">Terms of Service</a>
-                        <a href="#" class="text-light text-decoration-none">Contact</a>
+                        <a href="privacy.html" class="text-light text-decoration-none">Privacy Policy</a>
+                        <a href="terms.html" class="text-light text-decoration-none">Terms of Service</a>
+                        <a href="contact.html" class="text-light text-decoration-none">Contact</a>
                     </div>
                 </div>
             </div>
@@ -276,11 +279,12 @@
             }
 
             async scanForBlogPosts() {
+                // Try to dynamically discover blog posts in the blog directory
                 const potentialBlogFiles = [
                     'soc2-getting-started-guide.html',
-                    'soc2-vs-iso27001-comparison.html', 
                     'soc2-automation-platforms-review.html',
-                    'soc2-cost-breakdown-2025.html',
+                    'soc2-audit-cost-breakdown.html',
+                    'soc2-vs-iso27001-comparison.html', 
                     'choosing-right-soc2-auditor.html',
                     'soc2-readiness-checklist.html',
                     'continuous-monitoring-best-practices.html',
