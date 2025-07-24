@@ -1,370 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOC 2 Certification Directory | soc2certification.com</title>
-  <meta name="description" content="Find the right partner for your SOC 2 journey. Browse 50+ auditors & automation platforms, compare pricing, and learn with expert‑written guides.">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    :root{--primary:#495AF5;--secondary:#7436FF}
-    .gradient-bg{background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);color:#fff}
-    .vendor-table th{white-space:nowrap}
-    .card-img-top{object-fit:cover;height:180px}
-    .sticky-header th{position:sticky;top:0;background:#e6ecff;z-index:1}
-  </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JYY8MX561"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-2JYY8MX561');
-  </script>
-</head>
-<body data-bs-spy="scroll" data-bs-target="#nav">
-<nav id="nav" class="navbar navbar-expand-lg navbar-dark gradient-bg shadow-sm fixed-top">
- <div class="container">
-   <a class="navbar-brand fw-semibold" href="#">soc2certification.com</a>
-   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
-   <div class="collapse navbar-collapse" id="navbarNav">
-     <ul class="navbar-nav ms-auto">
-       <li class="nav-item"><a class="nav-link" href="#vendors"><i class="bi bi-list-check"></i> Vendors</a></li>
-       <li class="nav-item"><a class="nav-link" href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
-     </ul>
-   </div>
- </div>
-</nav>
-
-<header class="gradient-bg py-5" style="margin-top:56px;">
-  <div class="container text-center py-5">
-    <h1 class="display-4 fw-bold">Your Shortcut to SOC 2</h1>
-    <p class="lead mb-4">50+ vetted auditors & automation platforms, crowdsourced pricing data, and field‑tested guidance.</p>
-    <a href="#vendors" class="btn btn-light btn-lg fw-semibold">Explore Vendors</a>
-  </div>
-</header>
-
-<section id="vendors" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="fw-bold mb-4 text-center">SOC 2 Vendor Directory <span class="badge bg-primary align-middle">2025</span></h2>
-    <div class="table-responsive">
-      <table class="table table-hover align-middle vendor-table table-bordered table-sm">
-        <thead class="sticky-header">
-          <tr>
-            <th>Vendor</th>
-            <th>Category</th>
-            <th>Starter&nbsp;Plan</th>
-            <th>Turnaround</th>
-            <th>HQ</th>
-            <th>Certifications</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="vendorBody"></tbody>
-      </table>
-    </div>
-    <p class="text-muted small fst-italic mt-2">*Pricing and timeline figures are community‑submitted averages—always request a fresh quote.</p>
-  </div>
-</section>
-
-<section id="blog" class="py-5">
-  <div class="container">
-    <h2 class="fw-bold mb-4 text-center">Latest on the Blog</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4" id="blogGrid">
-      <!-- Auto-populated from actual blog files -->
-    </div>
-    <div class="text-center mt-4" id="blogCTA" style="display:none;">
-      <a href="blog.html" class="btn btn-primary btn-lg">View All Articles</a>
-    </div>
-  </div>
-</section>
-
-<footer class="bg-dark text-light py-4">
-  <div class="container text-center small">© 2025 soc2certification.com · <a href="#" class="text-light text-decoration-none">Privacy</a> · <a href="#" class="text-light text-decoration-none">Contact</a></div>
-</footer>
-
-<script>
-/* -------- Vendor Data -------- */
-const vendorData=[
-  {name:"Schellman",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Tampa, FL",certs:"SOC 2",url:"https://www.schellman.com"},
-  {name:"A‑LIGN",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Tampa, FL",certs:"SOC 2",url:"https://www.a-lign.com"},
-  {name:"BARR Advisory",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Kansas City, MO",certs:"SOC 2",url:"https://www.barradvisory.com"},
-  {name:"Coalfire",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Westminster, CO",certs:"SOC 2",url:"https://www.coalfire.com"},
-  {name:"Aprio",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Atlanta, GA",certs:"SOC 2",url:"https://www.aprio.com"},
-  {name:"Grant Thornton",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Chicago, IL",certs:"SOC 2",url:"https://www.grantthornton.com"},
-  {name:"Moss Adams",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Seattle, WA",certs:"SOC 1 & 2",url:"https://www.mossadams.com"},
-  {name:"Crowe LLP",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Chicago, IL",certs:"SOC 2",url:"https://www.crowe.com"},
-  {name:"RSM US",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Chicago, IL",certs:"SOC 2",url:"https://rsmus.com"},
-  {name:"BDO USA",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Chicago, IL",certs:"SOC 2",url:"https://www.bdo.com"},
-  {name:"Deloitte &Touche",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www2.deloitte.com"},
-  {name:"PwC",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.pwc.com"},
-  {name:"KPMG LLP",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.kpmg.com"},
-  {name:"Ernst & Young (EY)",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.ey.com"},
-  {name:"FORVIS",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Kansas City, MO",certs:"SOC 2",url:"https://www.forvis.com"},
-  {name:"Withum",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Princeton, NJ",certs:"SOC 2",url:"https://www.withum.com"},
-  {name:"Sensiba LLP",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Pleasanton, CA",certs:"SOC 2 & ISO 27001",url:"https://sensiba.com"},
-  {name:"Linford & Company",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Boulder, CO",certs:"SOC 2",url:"https://linfordco.com"},
-  {name:"KirkpatrickPrice",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Nashville, TN",certs:"SOC 2 & HITRUST",url:"https://kirkpatrickprice.com"},
-  {name:"Plante Moran",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Southfield, MI",certs:"SOC 2",url:"https://plantemoran.com"},
-  {name:"Cherry Bekaert",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Richmond, VA",certs:"SOC 2",url:"https://www.cbh.com"},
-  {name:"CohnReznick",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.cohnreznick.com"},
-  {name:"EisnerAmper",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2",url:"https://www.eisneramper.com"},
-  {name:"CliftonLarsonAllen (CLA)",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"Minneapolis, MN",certs:"SOC 2",url:"https://www.cla-cpa.com"},
-  {name:"Prescient Assurance",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"New York, NY",certs:"SOC 2 & ISO",url:"https://prescientassurance.com"},
-  {name:"360 Advanced",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"St Petersburg, FL",certs:"SOC 2",url:"https://360advanced.com"},
-  {name:"Armanino LLP",cat:"Audit Firm",price:"Custom",time:"Varies",hq:"San Ramon, CA",certs:"SOC 2",url:"https://armanino.com"},
-  {name:"CyberSapiens",cat:"Consulting + Audit",price:"Custom",time:"Varies",hq:"San Jose, CA",certs:"SOC 2 & PCI‑DSS",url:"https://cybersapiens.com.au"},
-  {name:"Secureframe",cat:"Automation Platform",price:"From $5k",time:"Weeks",hq:"San Francisco, CA",certs:"SOC 2, ISO 27001",url:"https://secureframe.com"},
-  {name:"Vanta",cat:"Automation Platform",price:"From $9.5k",time:"Weeks",hq:"San Francisco, CA",certs:"SOC 2, ISO 27001",url:"https://www.vanta.com"},
-  {name:"Drata",cat:"Automation Platform",price:"From $7k",time:"Weeks",hq:"San Diego, CA",certs:"SOC 2, ISO 27001",url:"https://drata.com"},
-  {name:"Strike Graph",cat:"Automation Platform",price:"From $6k",time:"Weeks",hq:"Seattle, WA",certs:"SOC 2, ISO 27001",url:"https://strikegraph.com"},
-  {name:"AuditBoard",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Los Angeles, CA",certs:"SOC 2, SOX",url:"https://auditboard.com"},
-  {name:"Tugboat Logic",cat:"Automation Platform",price:"From $6k",time:"Weeks",hq:"San Jose, CA",certs:"SOC 2, ISO 27001",url:"https://tugboatlogic.com"},
-  {name:"Hyperproof",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Bellevue, WA",certs:"SOC 2, ISO 27001",url:"https://hyperproof.io"},
-  {name:"LogicGate Risk Cloud",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Chicago, IL",certs:"SOC 2, GRC",url:"https://logicgate.com"},
-  {name:"OneTrust GRC",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Atlanta, GA",certs:"SOC 2, ISO",url:"https://onetrust.com"},
-  {name:"Apptega",cat:"Automation Platform",price:"From $4k",time:"Weeks",hq:"Atlanta, GA",certs:"SOC 2, NIST CSF",url:"https://apptega.com"},
-  {name:"Scytale",cat:"Automation Platform",price:"From $4k",time:"Weeks",hq:"Tel Aviv, IL",certs:"SOC 2, ISO 27001",url:"https://scytale.ai"},
-  {name:"Thoropass",cat:"Automation Platform",price:"From $5k",time:"Weeks",hq:"New York, NY",certs:"SOC 2, HIPAA",url:"https://thoropass.com"},
-  {name:"Laika",cat:"Automation Platform",price:"From $6k",time:"Weeks",hq:"New York, NY",certs:"SOC 2, ISO",url:"https://laika.com"},
-  {name:"Sprinto",cat:"Automation Platform",price:"From $5k",time:"Weeks",hq:"Bengaluru, IN",certs:"SOC 2, ISO 27001",url:"https://sprinto.com"},
-  {name:"TrustCloud",cat:"Automation Platform",price:"Free tier",time:"Weeks",hq:"Boston, MA",certs:"SOC 2, ISO 27001",url:"https://trustcloud.ai"},
-  {name:"JupiterOne",cat:"Automation Platform",price:"Free tier",time:"Weeks",hq:"Morrisville, NC",certs:"SOC 2, NIST CSF",url:"https://jupiterone.com"},
-  {name:"Compyl",cat:"Automation Platform",price:"From $3k",time:"Weeks",hq:"New York, NY",certs:"SOC 2, ISO",url:"https://compyl.com"},
-  {name:"Scrut Automation",cat:"Automation Platform",price:"From $4k",time:"Weeks",hq:"San Francisco, CA",certs:"SOC 2, ISO 27001",url:"https://scrut.io"},
-  {name:"Anecdotes",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Tel Aviv, IL",certs:"SOC 2, ISO",url:"https://anecdotes.ai"},
-  {name:"Carbide (Securicy)",cat:"Automation Platform",price:"From $3k",time:"Weeks",hq:"Halifax, NS",certs:"SOC 2, ISO",url:"https://carbidesecure.com"},
-  {name:"Akitra Comply",cat:"Automation Platform",price:"From $4k",time:"Weeks",hq:"Mountain View, CA",certs:"SOC 2, ISO 27001",url:"https://akitra.com"},
-  {name:"LogicManager",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Boston, MA",certs:"SOC 2, ERM",url:"https://logicmanager.com"},
-  {name:"Ostendio",cat:"Automation Platform",price:"From $3k",time:"Weeks",hq:"Arlington, VA",certs:"SOC 2, HIPAA",url:"https://ostendio.com"},
-  {name:"SafeBase",cat:"Trust Center",price:"From $2k",time:"Weeks",hq:"San Francisco, CA",certs:"SOC 2 Readiness",url:"https://safebase.io"},
-  {name:"Aptible Comply",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"New York, NY",certs:"SOC 2, HIPAA",url:"https://aptible.com"},
-  {name:"RiskOptics ZenGRC",cat:"Automation Platform",price:"Custom",time:"Weeks",hq:"Austin, TX",certs:"SOC 2, FedRAMP",url:"https://riskoptics.com"}
-];
-
-/* -------- Auto Blog Detection System -------- */
-async function scanForBlogFiles() {
-  const blogPosts = [];
-  
-  // Auto-scan blog directory for HTML files
-  const possibleFiles = [
-    'soc2-vs-iso27001.html',
-    'soc2-cost-analysis-2025.html',
-    'continuous-compliance-culture.html',
-    'penetration-testing-soc2.html',
-    'data-classification-guide.html',
-    'incident-response-planning.html',
-    'compliance-platform-comparison.html',
-    'soc2-readiness-checklist.html',
-    'choosing-soc2-auditor.html',
-    'automation-platform-guide.html',
-    'employee-training-compliance.html',
-    'vendor-risk-assessment.html'
-  ];
-
-  for (const file of possibleFiles) {
-    try {
-      const response = await fetch(`blog/${file}`, { method: 'HEAD' });
-      if (response.ok) {
-        // File exists, now extract metadata
-        const metadata = await extractBlogMetadata(`blog/${file}`);
-        if (metadata) {
-          blogPosts.push(metadata);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC 2 Certification Directory | soc2certification.com</title>
+    <meta name="description" content="Find the right partner for your SOC 2 journey. Browse top auditors & automation platforms, compare pricing, and learn with expert guides.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #495AF5;
+            --secondary: #7436FF;
+            --accent: #00D9FF;
         }
-      }
-    } catch (error) {
-      // File doesn't exist, skip silently
-      continue;
-    }
-  }
-
-  return blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-}
-
-async function extractBlogMetadata(filePath) {
-  try {
-    const response = await fetch(filePath);
-    const html = await response.text();
-    
-    // Extract metadata from HTML
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    
-    const title = doc.querySelector('title')?.textContent?.replace(' | SOC 2 Blog', '') || 'Untitled';
-    const description = doc.querySelector('meta[name="description"]')?.content || '';
-    const publishDate = extractDateFromHTML(doc) || extractDateFromFilename(filePath);
-    const readTime = extractReadTime(doc, html);
-    const author = extractAuthor(doc);
-    const tags = extractTags(doc);
-    const featuredImage = extractFeaturedImage(doc);
-    
-    return {
-      title,
-      excerpt: description,
-      date: formatDate(publishDate),
-      url: filePath,
-      readTime,
-      author: author.name,
-      authorImg: author.img,
-      img: featuredImage,
-      tags,
-      featured: doc.querySelector('.featured-badge') !== null
-    };
-  } catch (error) {
-    console.log(`Could not extract metadata from ${filePath}`);
-    return null;
-  }
-}
-
-function extractDateFromHTML(doc) {
-  // Look for date in various places
-  const dateSelectors = [
-    'meta[property="article:published_time"]',
-    'meta[name="publish-date"]',
-    'time[datetime]',
-    '.publish-date',
-    '.date'
-  ];
-  
-  for (const selector of dateSelectors) {
-    const element = doc.querySelector(selector);
-    if (element) {
-      const dateStr = element.getAttribute('datetime') || element.getAttribute('content') || element.textContent;
-      const date = new Date(dateStr);
-      if (!isNaN(date.getTime())) {
-        return date;
-      }
-    }
-  }
-  return null;
-}
-
-function extractDateFromFilename(filePath) {
-  // Extract date from filename patterns like "2025-01-15-article.html"
-  const filename = filePath.split('/').pop();
-  const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
-  if (dateMatch) {
-    return new Date(dateMatch[1], dateMatch[2] - 1, dateMatch[3]);
-  }
-  return new Date(); // Fallback to current date
-}
-
-function extractReadTime(doc, html) {
-  // Check for explicit read time
-  const readTimeEl = doc.querySelector('.reading-time, .read-time');
-  if (readTimeEl) {
-    const match = readTimeEl.textContent.match(/(\d+)/);
-    if (match) return match[1];
-  }
-  
-  // Calculate from word count
-  const textContent = doc.body?.textContent || '';
-  const wordCount = textContent.split(/\s+/).length;
-  return Math.max(1, Math.ceil(wordCount / 200)).toString();
-}
-
-function extractAuthor(doc) {
-  const authorName = doc.querySelector('.author-name, .by-author, h6')?.textContent?.trim() || 'SOC 2 Expert';
-  const authorImg = doc.querySelector('.author-avatar, .author-img')?.src || 
-                   'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80';
-  
-  return { name: authorName, img: authorImg };
-}
-
-function extractTags(doc) {
-  const tagElements = doc.querySelectorAll('.tag, .category, .topic');
-  return Array.from(tagElements).map(el => el.textContent.trim()).filter(tag => tag.length > 0);
-}
-
-function extractFeaturedImage(doc) {
-  // Look for featured image in various places
-  const imgSelectors = [
-    'meta[property="og:image"]',
-    '.featured-image img',
-    '.hero-image img',
-    'article img:first-of-type',
-    'img.card-img-top'
-  ];
-  
-  for (const selector of imgSelectors) {
-    const element = doc.querySelector(selector);
-    if (element) {
-      return element.getAttribute('content') || element.src;
-    }
-  }
-  
-  // Fallback to a generic image
-  return 'https://images.unsplash.com/photo-1581091012184-7f5bb97e20e6?auto=format&fit=crop&w=800&q=60';
-}
-
-function formatDate(date) {
-  return date.toLocaleDateString('en-CA').replace(/-/g, '‑');
-}
-
-/* -------- Render Functions -------- */
-function renderVendors() {
-  const tbody = document.getElementById('vendorBody');
-  vendorData.forEach(v => {
-    const row = `<tr>
-      <td><a href="${v.url}" class="text-decoration-none fw-semibold" target="_blank" rel="noopener">${v.name}</a></td>
-      <td>${v.cat}</td>
-      <td>${v.price}</td>
-      <td>${v.time}</td>
-      <td>${v.hq}</td>
-      <td>${v.certs}</td>
-      <td><a href="${v.url}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Visit</a></td>
-    </tr>`;
-    tbody.insertAdjacentHTML('beforeend', row);
-  });
-}
-
-async function renderBlogs() {
-  const grid = document.getElementById('blogGrid');
-  const blogCTA = document.getElementById('blogCTA');
-  
-  try {
-    const posts = await scanForBlogFiles();
-    
-    if (posts.length === 0) {
-      // No blog posts found, hide the entire blog section
-      document.getElementById('blog').style.display = 'none';
-      return;
-    }
-    
-    // Show first 3 posts
-    posts.slice(0, 3).forEach(post => {
-      const card = `<div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="${post.img}" class="card-img-top" alt="">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">${post.title}</h5>
-            <p class="card-text small text-muted mb-2">${post.date} • ${post.readTime} min read</p>
-            <p class="card-text flex-grow-1">${post.excerpt}</p>
-            <a href="${post.url}" class="btn btn-primary btn-sm mt-auto">Read More</a>
-          </div>
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .hero-section {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .vendor-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            height: 100%;
+        }
+        
+        .vendor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .category-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(73, 90, 245, 0.3);
+            color: white;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e6f2ff 100%);
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark gradient-bg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="bi bi-shield-check me-2"></i>
+                SOC2Certification.com
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vendors">Vendors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>`;
-      grid.insertAdjacentHTML('beforeend', card);
-    });
-    
-    // Show CTA if there are more than 3 posts
-    if (posts.length > 3) {
-      blogCTA.style.display = 'block';
-    }
-    
-  } catch (error) {
-    console.log('Blog auto-detection failed:', error);
-    document.getElementById('blog').style.display = 'none';
-  }
-}
+    </nav>
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderVendors();
-  renderBlogs();
-});
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <section id="home" class="hero-section gradient-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Find Your Perfect SOC 2 Partner</h1>
+                    <p class="lead mb-4">
+                        Discover top-rated auditors and automation platforms to streamline your SOC 2 compliance journey. 
+                        Compare pricing, read expert insights, and make informed decisions.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#vendors" class="btn btn-light btn-lg px-4">
+                            <i class="bi bi-search me-2"></i>Browse Vendors
+                        </a>
+                        <a href="blog.html" class="btn btn-outline-light btn-lg px-4">
+                            <i class="bi bi-journal-text me-2"></i>Read Guides
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="position-relative">
+                        <i class="bi bi-shield-check display-1 text-white opacity-75"></i>
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <div class="bg-white bg-opacity-10 rounded-circle p-4">
+                                <i class="bi bi-check-circle-fill fs-1 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h3 class="fw-bold text-primary mb-2">50+</h3>
+                        <p class="mb-0 text-muted">Verified Vendors</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h3 class="fw-bold text-primary mb-2">Big 4</h3>
+                        <p class="mb-0 text-muted">Audit Firms</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h3 class="fw-bold text-primary mb-2">15+</h3>
+                        <p class="mb-0 text-muted">Automation Platforms</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h3 class="fw-bold text-primary mb-2">2025</h3>
+                        <p class="mb-0 text-muted">Updated Pricing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vendors" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title fw-bold">SOC 2 Vendor Directory</h2>
+            
+            <div class="row mb-4">
+                <div class="col-md-6 mx-auto">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search vendors..." id="searchInput">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="d-flex gap-2 flex-wrap justify-content-center">
+                        <button class="btn btn-outline-primary btn-sm filter-btn active" data-category="all">All</button>
+                        <button class="btn btn-outline-primary btn-sm filter-btn" data-category="Audit Firm">Audit Firms</button>
+                        <button class="btn btn-outline-primary btn-sm filter-btn" data-category="Automation Platform">Automation Platforms</button>
+                        <button class="btn btn-outline-primary btn-sm filter-btn" data-category="Consulting">Consulting</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4" id="vendorGrid">
+                <!-- Vendors will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SOC2Certification.com</h5>
+                    <p class="mb-0 text-muted">Your trusted guide to SOC 2 compliance</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex gap-3 justify-content-md-end">
+                        <a href="#" class="text-light text-decoration-none">Privacy Policy</a>
+                        <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                        <a href="#" class="text-light text-decoration-none">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <p class="mb-0 text-muted">&copy; 2025 soc2certification.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const vendors = [
+            {
+                name: "Vanta",
+                category: "Automation Platform",
+                price: "From $9,500/year",
+                turnaround: "4-6 weeks",
+                location: "San Francisco, CA",
+                certifications: ["SOC 2", "ISO 27001", "HIPAA"],
+                url: "https://www.vanta.com",
+                description: "AI-powered compliance automation platform with continuous monitoring"
+            },
+            {
+                name: "Drata",
+                category: "Automation Platform", 
+                price: "From $7,000/year",
+                turnaround: "4-6 weeks",
+                location: "San Diego, CA",
+                certifications: ["SOC 2", "ISO 27001", "PCI DSS"],
+                url: "https://drata.com",
+                description: "Automated compliance platform with 150+ integrations"
+            },
+            {
+                name: "Secureframe",
+                category: "Automation Platform",
+                price: "From $5,000/year", 
+                turnaround: "3-5 weeks",
+                location: "San Francisco, CA",
+                certifications: ["SOC 2", "ISO 27001", "GDPR"],
+                url: "https://secureframe.com",
+                description: "Compliance automation with built-in security controls"
+            },
+            {
+                name: "Deloitte & Touche",
+                category: "Audit Firm",
+                price: "Custom pricing",
+                turnaround: "8-12 weeks", 
+                location: "New York, NY",
+                certifications: ["SOC 1", "SOC 2", "SOC 3"],
+                url: "https://www2.deloitte.com",
+                description: "Big Four audit firm with extensive SOC 2 experience"
+            },
+            {
+                name: "PwC",
+                category: "Audit Firm",
+                price: "Custom pricing",
+                turnaround: "8-12 weeks",
+                location: "New York, NY", 
+                certifications: ["SOC 1", "SOC 2", "SOC 3"],
+                url: "https://www.pwc.com",
+                description: "Global audit leader specializing in compliance frameworks"
+            },
+            {
+                name: "KPMG",
+                category: "Audit Firm",
+                price: "Custom pricing",
+                turnaround: "8-12 weeks",
+                location: "New York, NY",
+                certifications: ["SOC 1", "SOC 2", "ISO 27001"],
+                url: "https://www.kpmg.com", 
+                description: "Professional services firm with cybersecurity expertise"
+            },
+            {
+                name: "Ernst & Young (EY)",
+                category: "Audit Firm",
+                price: "Custom pricing",
+                turnaround: "8-12 weeks",
+                location: "New York, NY",
+                certifications: ["SOC 1", "SOC 2", "SOC 3"],
+                url: "https://www.ey.com",
+                description: "Big Four firm with global compliance capabilities"
+            },
+            {
+                name: "A-LIGN",
+                category: "Audit Firm",
+                price: "From $15,000",
+                turnaround: "6-8 weeks",
+                location: "Tampa, FL",
+                certifications: ["SOC 2", "PCI DSS", "HITRUST"],
+                url: "https://www.a-lign.com",
+                description: "Leading cybersecurity and compliance consultancy"
+            },
+            {
+                name: "Schellman",
+                category: "Audit Firm", 
+                price: "From $12,000",
+                turnaround: "6-8 weeks",
+                location: "Tampa, FL",
+                certifications: ["SOC 2", "ISO 27001", "FedRAMP"],
+                url: "https://www.schellman.com",
+                description: "Specialized compliance auditing and advisory services"
+            },
+            {
+                name: "Strike Graph",
+                category: "Automation Platform",
+                price: "From $6,000/year",
+                turnaround: "3-4 weeks", 
+                location: "Seattle, WA",
+                certifications: ["SOC 2", "ISO 27001", "GDPR"],
+                url: "https://strikegraph.com",
+                description: "Compliance automation with expert guidance"
+            },
+            {
+                name: "Thoropass",
+                category: "Automation Platform",
+                price: "From $5,000/year",
+                turnaround: "4-6 weeks",
+                location: "New York, NY",
+                certifications: ["SOC 2", "HIPAA", "GDPR"],
+                url: "https://thoropass.com",
+                description: "GRC platform with compliance automation"
+            },
+            {
+                name: "Coalfire",
+                category: "Audit Firm",
+                price: "From $18,000",
+                turnaround: "6-10 weeks",
+                location: "Westminster, CO", 
+                certifications: ["SOC 2", "FedRAMP", "HITRUST"],
+                url: "https://www.coalfire.com",
+                description: "Cybersecurity consultancy and audit services"
+            }
+        ];
+
+        function renderVendors(vendorsToRender = vendors) {
+            const grid = document.getElementById('vendorGrid');
+            grid.innerHTML = '';
+
+            vendorsToRender.forEach(vendor => {
+                const certBadges = vendor.certifications.map(cert => 
+                    `<span class="badge bg-primary me-1">${cert}</span>`
+                ).join('');
+
+                const card = `
+                    <div class="col-lg-4 col-md-6 vendor-item" data-category="${vendor.category}">
+                        <div class="card vendor-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title mb-0">${vendor.name}</h5>
+                                    <span class="badge bg-secondary category-badge">${vendor.category}</span>
+                                </div>
+                                <p class="card-text text-muted mb-3">${vendor.description}</p>
+                                <div class="mb-3">
+                                    <small class="text-muted d-block"><i class="bi bi-geo-alt me-1"></i>${vendor.location}</small>
+                                    <small class="text-muted d-block"><i class="bi bi-currency-dollar me-1"></i>${vendor.price}</small>
+                                    <small class="text-muted d-block"><i class="bi bi-clock me-1"></i>${vendor.turnaround}</small>
+                                </div>
+                                <div class="mb-3">
+                                    ${certBadges}
+                                </div>
+                                <a href="${vendor.url}" target="_blank" rel="noopener noreferrer" class="btn btn-custom btn-sm">
+                                    Visit Website <i class="bi bi-arrow-up-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        function setupFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const searchInput = document.getElementById('searchInput');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const category = btn.dataset.category;
+                    filterVendors(category, searchInput.value);
+                });
+            });
+
+            searchInput.addEventListener('input', () => {
+                const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+                filterVendors(activeCategory, searchInput.value);
+            });
+        }
+
+        function filterVendors(category, searchTerm) {
+            let filtered = vendors;
+
+            if (category !== 'all') {
+                filtered = filtered.filter(vendor => vendor.category === category);
+            }
+
+            if (searchTerm) {
+                const term = searchTerm.toLowerCase();
+                filtered = filtered.filter(vendor => 
+                    vendor.name.toLowerCase().includes(term) ||
+                    vendor.description.toLowerCase().includes(term) ||
+                    vendor.certifications.some(cert => cert.toLowerCase().includes(term))
+                );
+            }
+
+            renderVendors(filtered);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderVendors();
+            setupFilters();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
