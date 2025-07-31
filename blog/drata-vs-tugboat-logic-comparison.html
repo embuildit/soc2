@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script src="../js/analytics.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drata vs Tugboat Logic: Complete Platform Comparison 2025 | SOC 2 Blog</title>
+    <meta name="description" content="Detailed comparison of Drata vs Tugboat Logic (OneTrust) for SOC 2 compliance automation. Features, pricing, pros and cons to help you choose the right platform.">
+    <meta name="category" content="automation">
+    <meta name="keywords" content="Drata, Tugboat Logic, OneTrust, SOC 2, Compliance Platforms, Comparison, Automation">
+    <meta property="article:published_time" content="2025-07-31">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=800&q=80">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #495AF5;
+            --secondary: #7436FF;
+            --accent: #00D9FF;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .hero-section {
+            padding: 8rem 0 4rem;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(73, 90, 245, 0.3);
+            color: white;
+        }
+        
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .article-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--secondary);
+        }
+        
+        .category-badge {
+            background: #17a2b8;
+            color: white;
+        }
+        
+        .back-to-blog {
+            margin-bottom: 2rem;
+        }
+        
+        .platform-card {
+            border: 3px solid #e9ecef;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1rem 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .drata-card {
+            border-color: #6b46c1;
+            background: linear-gradient(135deg, #faf8ff 0%, #f3f0ff 100%);
+        }
+        
+        .tugboat-card {
+            border-color: #007bff;
+            background: linear-gradient(135deg, #f8fbff 0%, #e8f0ff 100%);
+        }
+        
+        .vs-badge {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 2rem auto;
+            display: table;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-highlight {
+            background: #e8f5e8;
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .decision-card {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark gradient-bg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="bi bi-shield-check me-2"></i>
+                SOC2Certification.com
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#vendors">Vendors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../blog.html">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section gradient-bg">
+        <div class="container">
+            <div class="back-to-blog">
+                <a href="../blog.html" class="btn btn-outline-light">
+                    <i class="bi bi-arrow-left me-2"></i>Back to Blog
+                </a>
+            </div>
+            <div class="text-center">
+                <span class="badge category-badge mb-3">Automation</span>
+                <h1 class="display-5 fw-bold mb-4">Drata vs Tugboat Logic: Platform Battle</h1>
+                <p class="lead mb-4">Comprehensive comparison of two powerful SOC 2 compliance automation solutions</p>
+                <div class="d-flex justify-content-center gap-4 text-sm">
+                    <span><i class="bi bi-calendar me-1"></i>July 31, 2025</span>
+                    <span><i class="bi bi-clock me-1"></i>11 min read</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="article-content">
+                <div class="feature-highlight">
+                    <h4><i class="bi bi-info-circle me-2"></i>Platform Context</h4>
+                    <p class="mb-0">Tugboat Logic was acquired by OneTrust in 2021 and integrated into the OneTrust GRC platform. This comparison evaluates Drata against the current OneTrust offering that incorporates former Tugboat Logic capabilities.</p>
+                </div>
+
+                <h2>Platform Overview</h2>
+
+                <div class="row g-4 my-4">
+                    <div class="col-lg-6">
+                        <div class="platform-card drata-card">
+                            <div class="text-center mb-3">
+                                <h3><i class="bi bi-graph-up-arrow me-2"></i>Drata</h3>
+                                <p class="text-muted">The Multi-Framework Automation Expert</p>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><strong>Founded:</strong> 2020</li>
+                                <li><strong>Focus:</strong> Multi-framework compliance automation</li>
+                                <li><strong>Market:</strong> Mid-market to Enterprise</li>
+                                <li><strong>Approach:</strong> Evidence-first automation</li>
+                                <li><strong>Headquarters:</strong> San Diego, CA</li>
+                                <li><strong>Customers:</strong> 4,000+ companies</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="platform-card tugboat-card">
+                            <div class="text-center mb-3">
+                                <h3><i class="bi bi-building me-2"></i>OneTrust (Tugboat Logic)</h3>
+                                <p class="text-muted">The Comprehensive GRC Platform</p>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><strong>Founded:</strong> 2017 (acquired 2021)</li>
+                                <li><strong>Focus:</strong> Integrated GRC ecosystem</li>
+                                <li><strong>Market:</strong> Enterprise-focused</li>
+                                <li><strong>Approach:</strong> Comprehensive governance suite</li>
+                                <li><strong>Headquarters:</strong> Atlanta, GA</li>
+                                <li><strong>Customers:</strong> 14,000+ organizations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vs-badge">
+                    <i class="bi bi-lightning me-2"></i>FEATURE SHOWDOWN
+                </div>
+
+                <h2>Detailed Feature Comparison</h2>
+
+                <div class="comparison-table">
+                    <table class="table table-striped mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th style="width: 30%;">Feature</th>
+                                <th style="width: 35%;">Drata</th>
+                                <th style="width: 35%;">OneTrust (Tugboat Logic)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Multi-Framework Support</strong></td>
+                                <td><span class="text-success">Excellent (SOC 2, ISO 27001, PCI, HIPAA)</span></td>
+                                <td><span class="text-success">Extensive framework library</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Evidence Collection Automation</strong></td>
+                                <td><span class="text-success">Superior (120+ integrations)</span></td>
+                                <td><span class="text-success">Excellent (100+ integrations)</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>User Interface</strong></td>
+                                <td><span class="text-success">Clean, compliance-focused</span></td>
+                                <td><span class="text-warning">Comprehensive but complex</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Implementation Speed</strong></td>
+                                <td><span class="text-success">4-8 weeks</span></td>
+                                <td><span class="text-warning">8-16 weeks</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Custom Controls</strong></td>
+                                <td><span class="text-success">Yes, flexible</span></td>
+                                <td><span class="text-success">Extensive customization</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reporting & Analytics</strong></td>
+                                <td><span class="text-success">Advanced compliance reporting</span></td>
+                                <td><span class="text-success">Enterprise-grade analytics</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pricing Model</strong></td>
+                                <td><span class="text-success">Transparent tiers</span></td>
+                                <td><span class="text-danger">Custom enterprise pricing</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Customer Support</strong></td>
+                                <td><span class="text-success">Excellent specialist support</span></td>
+                                <td><span class="text-success">Enterprise support tiers</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Drata's Key Advantages</h2>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-success"><i class="bi bi-collection me-2"></i>Multi-Framework Excellence</h5>
+                                <p class="card-text">Built from the ground up for multiple compliance frameworks. Single platform for SOC 2, ISO 27001, PCI DSS, HIPAA, and more with unified controls.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-success"><i class="bi bi-robot me-2"></i>Superior Evidence Automation</h5>
+                                <p class="card-text">Industry-leading evidence collection with 120+ integrations. Automated evidence mapping and continuous monitoring reduce manual work by 80%.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-success"><i class="bi bi-graph-up me-2"></i>Advanced Risk Management</h5>
+                                <p class="card-text">Sophisticated risk assessment and scoring. Real-time risk monitoring with predictive analytics for proactive compliance management.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-success"><i class="bi bi-people me-2"></i>Customer Success Focus</h5>
+                                <p class="card-text">Dedicated customer success managers and compliance experts. High customer satisfaction scores and responsive support team.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>OneTrust's Key Advantages</h2>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary"><i class="bi bi-building me-2"></i>Enterprise Integration</h5>
+                                <p class="card-text">Seamless integration with existing OneTrust privacy and GRC modules. Single vendor for comprehensive governance, risk, and compliance needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary"><i class="bi bi-gear me-2"></i>Deep Customization</h5>
+                                <p class="card-text">Extensive customization capabilities for enterprise requirements. Custom workflows, controls, and reporting to match organizational needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary"><i class="bi bi-globe me-2"></i>Global Scale</h5>
+                                <p class="card-text">Proven at enterprise scale with global deployment capabilities. Multi-tenant architecture supports complex organizational structures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary"><i class="bi bi-award me-2"></i>Market Leadership</h5>
+                                <p class="card-text">OneTrust's market-leading position in privacy and GRC provides credibility and stability for long-term compliance programs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Pricing Analysis</h2>
+
+                <div class="row g-4 my-4">
+                    <div class="col-lg-6">
+                        <div class="platform-card drata-card">
+                            <h4 class="text-center">Drata Pricing</h4>
+                            <div class="text-center mb-3">
+                                <div class="h4 text-success">$7,000 - $25,000+/year</div>
+                                <p class="text-muted">Transparent, framework-based pricing</p>
+                            </div>
+                            <ul>
+                                <li><strong>Starter:</strong> $7,000/year (single framework)</li>
+                                <li><strong>Growth:</strong> $15,000/year (2-3 frameworks)</li>
+                                <li><strong>Scale:</strong> $25,000/year (multiple frameworks)</li>
+                                <li><strong>Enterprise:</strong> Custom pricing</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Implementation support included. Annual contracts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="platform-card tugboat-card">
+                            <h4 class="text-center">OneTrust Pricing</h4>
+                            <div class="text-center mb-3">
+                                <div class="h4 text-primary">$20,000 - $100,000+/year</div>
+                                <p class="text-muted">Enterprise custom pricing</p>
+                            </div>
+                            <ul>
+                                <li><strong>GRC Basic:</strong> ~$20,000-40,000/year</li>
+                                <li><strong>GRC Professional:</strong> ~$40,000-70,000/year</li>
+                                <li><strong>GRC Enterprise:</strong> $70,000-100,000+/year</li>
+                                <li><strong>Implementation:</strong> $20,000-100,000+</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Pricing depends on modules, users, and complexity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Use Case Scenarios</h2>
+
+                <h3>When Drata is the Better Choice</h3>
+
+                <div class="decision-card">
+                    <h5><i class="bi bi-layers me-2"></i>Multi-Framework Requirements</h5>
+                    <p><strong>Scenario:</strong> 400-person SaaS company needs SOC 2, ISO 27001, and PCI DSS</p>
+                    <ul>
+                        <li>Multiple compliance requirements from different customers</li>
+                        <li>Want unified platform for all frameworks</li>
+                        <li>Need efficient evidence collection across standards</li>
+                        <li>Budget $30,000-60,000 annually</li>
+                    </ul>
+                    <p class="mb-0"><strong>Why Drata wins:</strong> Purpose-built for multi-framework compliance with superior evidence automation and clear pricing.</p>
+                </div>
+
+                <div class="decision-card">
+                    <h5><i class="bi bi-speedometer2 me-2"></i>Fast-Growing Mid-Market</h5>
+                    <p><strong>Scenario:</strong> 200-person company scaling rapidly with increasing compliance demands</p>
+                    <ul>
+                        <li>Growing from first SOC 2 to multiple frameworks</li>
+                        <li>Need platform that scales with growth</li>
+                        <li>Want compliance-focused solution</li>
+                        <li>Value excellent customer support</li>
+                    </ul>
+                    <p class="mb-0"><strong>Why Drata wins:</strong> Scalable multi-framework approach, excellent customer success, and compliance specialization.</p>
+                </div>
+
+                <h3>When OneTrust is the Better Choice</h3>
+
+                <div class="decision-card">
+                    <h5><i class="bi bi-building-gear me-2"></i>Large Enterprise Organizations</h5>
+                    <p><strong>Scenario:</strong> 3,000+ employee company with comprehensive GRC needs</p>
+                    <ul>
+                        <li>Need privacy management alongside compliance</li>
+                        <li>Complex organizational structure</li>
+                        <li>Existing OneTrust privacy deployments</li>
+                        <li>Budget $100,000+ for comprehensive GRC</li>
+                    </ul>
+                    <p class="mb-0"><strong>Why OneTrust wins:</strong> Comprehensive GRC platform, enterprise scale, existing privacy integrations, and deep customization.</p>
+                </div>
+
+                <div class="decision-card">
+                    <h5><i class="bi bi-globe me-2"></i>Complex Global Operations</h5>
+                    <p><strong>Scenario:</strong> Multinational corporation with diverse compliance requirements</p>
+                    <ul>
+                        <li>Operations across multiple jurisdictions</li>
+                        <li>Need vendor risk management integration</li>
+                        <li>Require extensive customization</li>
+                        <li>Have dedicated GRC teams</li>
+                    </ul>
+                    <p class="mb-0"><strong>Why OneTrust wins:</strong> Global scale, comprehensive feature set, vendor risk integration, and enterprise customization capabilities.</p>
+                </div>
+
+                <h2>Head-to-Head Analysis</h2>
+
+                <h3>Implementation and Onboarding</h3>
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Drata</th>
+                            <th>OneTrust</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Initial Setup</strong></td>
+                            <td>4-8 weeks</td>
+                            <td>8-16 weeks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Configuration Complexity</strong></td>
+                            <td>Moderate</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Training Requirements</strong></td>
+                            <td>1-2 days</td>
+                            <td>3-5 days</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time to First Value</strong></td>
+                            <td>2-4 weeks</td>
+                            <td>6-12 weeks</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Integration and Automation</h3>
+                <ul>
+                    <li><strong>Drata:</strong> 120+ integrations, API-first architecture, excellent cloud coverage, automated evidence collection</li>
+                    <li><strong>OneTrust:</strong> 100+ integrations, enterprise system connectors, custom API development, comprehensive workflow automation</li>
+                </ul>
+
+                <h3>Reporting and Insights</h3>
+                <ul>
+                    <li><strong>Drata:</strong> Compliance-focused dashboards, risk scoring, audit preparation reports, real-time monitoring</li>
+                    <li><strong>OneTrust:</strong> Enterprise analytics, custom reporting engine, executive dashboards, comprehensive GRC insights</li>
+                </ul>
+
+                <h2>Customer Satisfaction and Support</h2>
+
+                <h3>Drata Customer Experience</h3>
+                <ul>
+                    <li>High customer satisfaction scores (4.7/5 average)</li>
+                    <li>Dedicated customer success managers</li>
+                    <li>Responsive support with compliance expertise</li>
+                    <li>Active user community and resources</li>
+                </ul>
+
+                <h3>OneTrust Customer Experience</h3>
+                <ul>
+                    <li>Enterprise-grade support tiers</li>
+                    <li>Extensive documentation and training resources</li>
+                    <li>Professional services and consulting</li>
+                    <li>Large user community and events</li>
+                </ul>
+
+                <h2>Future Roadmap and Innovation</h2>
+
+                <h3>Drata's Innovation Focus</h3>
+                <ul>
+                    <li>AI-powered risk assessment and automation</li>
+                    <li>Expanded framework coverage (NIST, FedRAMP)</li>
+                    <li>Enhanced continuous monitoring capabilities</li>
+                    <li>International market expansion</li>
+                </ul>
+
+                <h3>OneTrust's Development Direction</h3>
+                <ul>
+                    <li>AI integration across GRC modules</li>
+                    <li>Enhanced privacy-compliance convergence</li>
+                    <li>ESG and sustainability compliance</li>
+                    <li>Advanced automation and workflow capabilities</li>
+                </ul>
+
+                <h2>Final Recommendation</h2>
+
+                <div class="feature-highlight">
+                    <h4><i class="bi bi-trophy me-2"></i>Decision Matrix</h4>
+                    
+                    <p><strong>Choose Drata if you:</strong></p>
+                    <ul>
+                        <li>Need multiple compliance frameworks (SOC 2, ISO 27001, PCI)</li>
+                        <li>Are a mid-market company (100-1,000 employees)</li>
+                        <li>Want specialized compliance automation</li>
+                        <li>Value transparent pricing and fast implementation</li>
+                        <li>Prioritize evidence automation and continuous monitoring</li>
+                    </ul>
+                    
+                    <p><strong>Choose OneTrust if you:</strong></p>
+                    <ul>
+                        <li>Are a large enterprise (1,000+ employees)</li>
+                        <li>Need comprehensive GRC beyond just compliance</li>
+                        <li>Already use OneTrust for privacy management</li>
+                        <li>Require extensive customization and integration</li>
+                        <li>Have dedicated GRC teams and resources</li>
+                    </ul>
+                    
+                    <p class="mb-0"><strong>Bottom line:</strong> Drata excels at multi-framework compliance automation for growing companies, while OneTrust provides comprehensive enterprise GRC capabilities for large organizations with complex governance needs.</p>
+                </div>
+
+                <div class="bg-light p-4 rounded mt-4">
+                    <h4>Compare Platform Options</h4>
+                    <p class="mb-0">Get detailed comparisons and personalized recommendations for your compliance automation needs.</p>
+                    <a href="../index.html#vendors" class="btn btn-custom mt-3">Explore All Platforms</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SOC2Certification.com</h5>
+                    <p class="mb-0 text-muted">Your trusted guide to SOC 2 compliance</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex gap-3 justify-content-md-end">
+                        <a href="../privacy.html" class="text-light text-decoration-none">Privacy Policy</a>
+                        <a href="../terms.html" class="text-light text-decoration-none">Terms of Service</a>
+                        <a href="../contact.html" class="text-light text-decoration-none">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <p class="mb-0 text-muted">&copy; 2025 soc2certification.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
