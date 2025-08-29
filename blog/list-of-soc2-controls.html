@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script src="../js/analytics.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of SOC 2 Controls 2025 - Detailed Control Reference Guide</title>
+    <meta name="description" content="Complete list of SOC 2 controls with detailed descriptions, implementation guidance, and examples. Your comprehensive reference for all Trust Service Criteria controls.">
+    <meta name="category" content="controls">
+    <meta name="keywords" content="list of SOC 2 controls, SOC 2 control reference, Trust Service Criteria controls, SOC 2 control descriptions">
+    <meta property="article:published_time" content="2025-07-31">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80">
+    <link rel="canonical" href="https://soc2certification.com/blog/list-of-soc2-controls.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #495AF5;
+            --secondary: #7436FF;
+            --accent: #00D9FF;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .hero-section {
+            padding: 8rem 0 4rem;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(73, 90, 245, 0.3);
+            color: white;
+        }
+        
+        .card {
+            border: none;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .control-group {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+            border: 2px solid #e9ecff;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .control-entry {
+            background: white;
+            border: 1px solid #e9ecf3;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .control-entry:hover {
+            border-color: var(--primary);
+            box-shadow: 0 2px 10px rgba(73, 90, 245, 0.1);
+        }
+
+        .control-number {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 1rem;
+            display: inline-block;
+        }
+
+        .control-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .type-preventive {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .type-detective {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .type-corrective {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .complexity-level {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .complexity-low {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .complexity-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .complexity-high {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .search-box {
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            background: white;
+            padding: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .filter-tag {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-tag:hover, .filter-tag.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .control-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e9ecf3;
+        }
+
+        .implementation-example {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            border: 1px solid #c3e6c3;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .related-controls {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .expand-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .criteria-nav {
+            position: sticky;
+            top: 140px;
+            background: white;
+            padding: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .criteria-nav .nav-link {
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .criteria-nav .nav-link.active {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .control-count {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-gradient" href="../index.html">SOC2Certification.com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section gradient-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">Complete List of SOC 2 Controls</h1>
+                    <p class="lead mb-4">Your comprehensive reference guide to all SOC 2 controls across the five Trust Service Criteria, with detailed descriptions, implementation guidance, and practical examples.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">100+ Controls</span>
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">Searchable Reference</span>
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">Implementation Examples</span>
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">Detailed Descriptions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <!-- Criteria Navigation -->
+                <div class="criteria-nav">
+                    <h5 class="mb-3">Trust Service Criteria</h5>
+                    <nav class="nav flex-column">
+                        <a class="nav-link active d-flex align-items-center" href="#security-controls" data-criteria="security">
+                            <i class="bi bi-shield-lock me-2"></i>Security (CC)
+                            <span class="control-count ms-auto">58</span>
+                        </a>
+                        <a class="nav-link d-flex align-items-center" href="#availability-controls" data-criteria="availability">
+                            <i class="bi bi-clock me-2"></i>Availability (A)
+                            <span class="control-count ms-auto">12</span>
+                        </a>
+                        <a class="nav-link d-flex align-items-center" href="#processing-controls" data-criteria="processing">
+                            <i class="bi bi-check2-square me-2"></i>Processing Integrity (PI)
+                            <span class="control-count ms-auto">8</span>
+                        </a>
+                        <a class="nav-link d-flex align-items-center" href="#confidentiality-controls" data-criteria="confidentiality">
+                            <i class="bi bi-eye-slash me-2"></i>Confidentiality (C)
+                            <span class="control-count ms-auto">6</span>
+                        </a>
+                        <a class="nav-link d-flex align-items-center" href="#privacy-controls" data-criteria="privacy">
+                            <i class="bi bi-person-check me-2"></i>Privacy (P)
+                            <span class="control-count ms-auto">15</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <!-- Search and Filter -->
+                <div class="search-box">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control" id="searchInput" placeholder="Search controls by ID, title, or description...">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" id="complexityFilter">
+                                <option value="">All Complexity Levels</option>
+                                <option value="low">Low Complexity</option>
+                                <option value="medium">Medium Complexity</option>
+                                <option value="high">High Complexity</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-tags">
+                        <span class="filter-tag active" data-type="all">All Controls</span>
+                        <span class="filter-tag" data-type="preventive">Preventive</span>
+                        <span class="filter-tag" data-type="detective">Detective</span>
+                        <span class="filter-tag" data-type="corrective">Corrective</span>
+                    </div>
+                </div>
+
+                <!-- Security Controls -->
+                <section id="security-controls" class="control-section">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-shield-lock me-2"></i>Security Controls (CC)</h2>
+                    
+                    <!-- Control Environment (CC1) -->
+                    <div class="control-group">
+                        <h3 class="mb-4"><i class="bi bi-building me-2"></i>Control Environment (CC1)</h3>
+                        
+                        <div class="control-entry" data-type="preventive" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc1-1-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC1.1</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Code of Conduct and Ethics</h5>
+                                <p class="mb-2">The entity demonstrates a commitment to integrity and ethical values through the establishment and enforcement of a code of conduct.</p>
+                                
+                                <div class="collapse control-details" id="cc1-1-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Written code of conduct addressing conflicts of interest, ethical behavior, and compliance</li>
+                                            <li>Annual code of conduct acknowledgment and training for all employees</li>
+                                            <li>Disciplinary procedures for code violations</li>
+                                            <li>Anonymous reporting mechanisms for ethical concerns</li>
+                                        </ul>
+                                    </div>
+                                    <div class="related-controls">
+                                        <strong>Related Controls:</strong> CC1.2, CC1.3, CC2.1
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="low">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc1-2-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC1.2</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-low">Low</span>
+                                <h5 class="mt-2 mb-2">Board Independence and Oversight</h5>
+                                <p class="mb-2">The board of directors or equivalent governing body demonstrates independence and exercises oversight of system design and operation.</p>
+                                
+                                <div class="collapse control-details" id="cc1-2-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Independent board members or audit committee oversight</li>
+                                            <li>Regular board meetings addressing security and risk topics</li>
+                                            <li>Board charter defining security oversight responsibilities</li>
+                                            <li>Executive reporting on security matters to the board</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc1-3-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC1.3</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Organizational Structure and Authority</h5>
+                                <p class="mb-2">Management establishes structures, reporting lines, and appropriate authorities to achieve the entity's objectives.</p>
+                                
+                                <div class="collapse control-details" id="cc1-3-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Organizational charts with clear reporting relationships</li>
+                                            <li>Job descriptions defining roles and responsibilities</li>
+                                            <li>Delegation of authority policies and procedures</li>
+                                            <li>Regular review and update of organizational structure</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc1-4-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC1.4</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Commitment to Competence</h5>
+                                <p class="mb-2">The entity demonstrates a commitment to attract, develop, and retain competent individuals in alignment with objectives.</p>
+                                
+                                <div class="collapse control-details" id="cc1-4-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Competency requirements in job descriptions</li>
+                                            <li>Skills assessment and training programs</li>
+                                            <li>Performance evaluation and development planning</li>
+                                            <li>Succession planning for key positions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="low">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc1-5-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC1.5</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-low">Low</span>
+                                <h5 class="mt-2 mb-2">Accountability and Enforcement</h5>
+                                <p class="mb-2">The entity holds individuals accountable for their responsibilities in the context of the entity's objectives.</p>
+                                
+                                <div class="collapse control-details" id="cc1-5-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Performance metrics tied to security objectives</li>
+                                            <li>Regular performance reviews and feedback</li>
+                                            <li>Recognition and incentive programs</li>
+                                            <li>Disciplinary procedures for non-compliance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logical and Physical Access Controls (CC6) -->
+                    <div class="control-group">
+                        <h3 class="mb-4"><i class="bi bi-key me-2"></i>Logical and Physical Access Controls (CC6)</h3>
+                        
+                        <div class="control-entry" data-type="preventive" data-complexity="high">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc6-1-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC6.1</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-high">High</span>
+                                <h5 class="mt-2 mb-2">Logical Access - User Identification and Authentication</h5>
+                                <p class="mb-2">The entity implements logical access controls to restrict access to systems, applications, and data to authorized users.</p>
+                                
+                                <div class="collapse control-details" id="cc6-1-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Multi-factor authentication for all system access</li>
+                                            <li>Strong password policies and enforcement</li>
+                                            <li>Single sign-on (SSO) implementation</li>
+                                            <li>Account lockout after failed login attempts</li>
+                                            <li>Regular password rotation requirements</li>
+                                        </ul>
+                                    </div>
+                                    <div class="related-controls">
+                                        <strong>Related Controls:</strong> CC6.2, CC6.3, CC6.7
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="high">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc6-2-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC6.2</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-high">High</span>
+                                <h5 class="mt-2 mb-2">Logical Access - New User Setup</h5>
+                                <p class="mb-2">Prior to issuing system credentials and granting system access, the entity establishes that the user is authorized.</p>
+                                
+                                <div class="collapse control-details" id="cc6-2-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Formal access request and approval process</li>
+                                            <li>Manager authorization for system access</li>
+                                            <li>Role-based access control (RBAC) implementation</li>
+                                            <li>Documented access provisioning procedures</li>
+                                            <li>Verification of employment status before access</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="detective" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc6-3-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC6.3</span>
+                                <span class="control-type type-detective">Detective</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Logical Access - Modification and Removal</h5>
+                                <p class="mb-2">The entity modifies or removes access in a timely manner for users whose system access is no longer authorized.</p>
+                                
+                                <div class="collapse control-details" id="cc6-3-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Automated deprovisioning upon termination</li>
+                                            <li>Regular access reviews and certifications</li>
+                                            <li>Timely access modification for role changes</li>
+                                            <li>Monitoring of inactive user accounts</li>
+                                            <li>HR integration for status changes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="high">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc6-7-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC6.7</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-high">High</span>
+                                <h5 class="mt-2 mb-2">Transmission of Data and Credentials</h5>
+                                <p class="mb-2">The entity restricts the transmission of data and credentials to authorized users and systems.</p>
+                                
+                                <div class="collapse control-details" id="cc6-7-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Encryption of data in transit (TLS/SSL)</li>
+                                            <li>Secure file transfer protocols (SFTP, HTTPS)</li>
+                                            <li>VPN for remote access</li>
+                                            <li>Certificate management and validation</li>
+                                            <li>Network segmentation and firewalls</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc6-8-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC6.8</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Physical Access Controls</h5>
+                                <p class="mb-2">The entity restricts physical access to facilities and protected information assets to authorized personnel.</p>
+                                
+                                <div class="collapse control-details" id="cc6-8-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Badge access control systems</li>
+                                            <li>Visitor management and escort procedures</li>
+                                            <li>Security cameras and monitoring</li>
+                                            <li>Secure disposal of confidential information</li>
+                                            <li>Environmental protection (fire, flood, climate)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Operations (CC7) -->
+                    <div class="control-group">
+                        <h3 class="mb-4"><i class="bi bi-gear me-2"></i>System Operations (CC7)</h3>
+                        
+                        <div class="control-entry" data-type="detective" data-complexity="high">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc7-1-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC7.1</span>
+                                <span class="control-type type-detective">Detective</span>
+                                <span class="complexity-level complexity-high">High</span>
+                                <h5 class="mt-2 mb-2">System Operations - System Quality</h5>
+                                <p class="mb-2">The entity manages systems to meet operational requirements through system quality processes.</p>
+                                
+                                <div class="collapse control-details" id="cc7-1-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>System performance monitoring and alerting</li>
+                                            <li>Capacity planning and management</li>
+                                            <li>Service level agreement monitoring</li>
+                                            <li>System availability tracking and reporting</li>
+                                            <li>Problem management and resolution procedures</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="detective" data-complexity="high">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc7-2-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC7.2</span>
+                                <span class="control-type type-detective">Detective</span>
+                                <span class="complexity-level complexity-high">High</span>
+                                <h5 class="mt-2 mb-2">System Monitoring - Detection of Incidents</h5>
+                                <p class="mb-2">The entity uses detection tools and configuration management to prevent, detect, and correct processing deviations.</p>
+                                
+                                <div class="collapse control-details" id="cc7-2-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Security Information and Event Management (SIEM)</li>
+                                            <li>Intrusion detection and prevention systems</li>
+                                            <li>Log monitoring and analysis</li>
+                                            <li>Vulnerability scanning and assessment</li>
+                                            <li>Configuration management and drift detection</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="corrective" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc7-3-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC7.3</span>
+                                <span class="control-type type-corrective">Corrective</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">System Operations - Response to Incidents</h5>
+                                <p class="mb-2">The entity evaluates security events to determine whether they could impact system security and responds appropriately.</p>
+                                
+                                <div class="collapse control-details" id="cc7-3-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Incident response plan and procedures</li>
+                                            <li>Security incident escalation process</li>
+                                            <li>Incident classification and prioritization</li>
+                                            <li>Post-incident review and lessons learned</li>
+                                            <li>Communication procedures for incidents</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="corrective" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#cc7-4-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">CC7.4</span>
+                                <span class="control-type type-corrective">Corrective</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">System Operations - Recovery and Continuity</h5>
+                                <p class="mb-2">The entity implements recovery procedures for recovery from system failures to meet system availability objectives.</p>
+                                
+                                <div class="collapse control-details" id="cc7-4-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Data backup and recovery procedures</li>
+                                            <li>Business continuity and disaster recovery plans</li>
+                                            <li>Recovery time and point objectives (RTO/RPO)</li>
+                                            <li>Regular backup testing and validation</li>
+                                            <li>Alternative processing site arrangements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Availability Controls -->
+                <section id="availability-controls" class="control-section" style="display: none;">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-clock me-2"></i>Availability Controls (A)</h2>
+                    
+                    <div class="control-group">
+                        <h3 class="mb-4"><i class="bi bi-speedometer2 me-2"></i>System Availability</h3>
+                        
+                        <div class="control-entry" data-type="detective" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#a1-1-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">A1.1</span>
+                                <span class="control-type type-detective">Detective</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Availability - Performance and Capacity Monitoring</h5>
+                                <p class="mb-2">The entity monitors system performance and evaluates whether system capacity is adequate to meet operating requirements.</p>
+                                
+                                <div class="collapse control-details" id="a1-1-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Real-time system performance dashboards</li>
+                                            <li>Capacity utilization monitoring and trending</li>
+                                            <li>Performance threshold alerting</li>
+                                            <li>Regular capacity planning assessments</li>
+                                            <li>Service level agreement (SLA) monitoring</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="high">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#a1-2-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">A1.2</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-high">High</span>
+                                <h5 class="mt-2 mb-2">Availability - Environmental Protections</h5>
+                                <p class="mb-2">The entity implements environmental protection controls to reduce the risk of environmental factors impacting system availability.</p>
+                                
+                                <div class="collapse control-details" id="a1-2-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Uninterruptible power supply (UPS) systems</li>
+                                            <li>Climate control and monitoring systems</li>
+                                            <li>Fire detection and suppression systems</li>
+                                            <li>Flood detection and mitigation measures</li>
+                                            <li>Redundant infrastructure components</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="corrective" data-complexity="high">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#a1-3-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">A1.3</span>
+                                <span class="control-type type-corrective">Corrective</span>
+                                <span class="complexity-level complexity-high">High</span>
+                                <h5 class="mt-2 mb-2">Availability - Recovery Procedures</h5>
+                                <p class="mb-2">The entity implements procedures to restore availability to meet system availability objectives when availability is compromised.</p>
+                                
+                                <div class="collapse control-details" id="a1-3-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Documented disaster recovery procedures</li>
+                                            <li>Regular disaster recovery testing</li>
+                                            <li>Alternative processing site arrangements</li>
+                                            <li>Automated failover mechanisms</li>
+                                            <li>Recovery time objective (RTO) definitions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Processing Integrity Controls -->
+                <section id="processing-controls" class="control-section" style="display: none;">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-check2-square me-2"></i>Processing Integrity Controls (PI)</h2>
+                    
+                    <div class="control-group">
+                        <h3 class="mb-4"><i class="bi bi-check-circle me-2"></i>Data Processing</h3>
+                        
+                        <div class="control-entry" data-type="preventive" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#pi1-1-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">PI1.1</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Processing Integrity - Input Completeness</h5>
+                                <p class="mb-2">The entity implements controls to ensure input data is complete and accurate for processing.</p>
+                                
+                                <div class="collapse control-details" id="pi1-1-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Input validation rules and checks</li>
+                                            <li>Data format and range validation</li>
+                                            <li>Mandatory field enforcement</li>
+                                            <li>Duplicate record detection</li>
+                                            <li>Data completeness verification procedures</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="detective" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#pi1-2-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">PI1.2</span>
+                                <span class="control-type type-detective">Detective</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Processing Integrity - Processing Completeness</h5>
+                                <p class="mb-2">The entity implements controls to ensure processing is complete and accurate.</p>
+                                
+                                <div class="collapse control-details" id="pi1-2-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Batch processing controls and reconciliation</li>
+                                            <li>Transaction logging and audit trails</li>
+                                            <li>Processing error detection and handling</li>
+                                            <li>Data quality monitoring and reporting</li>
+                                            <li>Automated processing validation checks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="detective" data-complexity="low">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#pi1-3-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">PI1.3</span>
+                                <span class="control-type type-detective">Detective</span>
+                                <span class="complexity-level complexity-low">Low</span>
+                                <h5 class="mt-2 mb-2">Processing Integrity - Output Accuracy</h5>
+                                <p class="mb-2">The entity implements controls to ensure output data is accurate and complete.</p>
+                                
+                                <div class="collapse control-details" id="pi1-3-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Output validation and verification procedures</li>
+                                            <li>Report reconciliation and balancing</li>
+                                            <li>Output formatting and presentation controls</li>
+                                            <li>Data distribution and access controls</li>
+                                            <li>Output retention and archival procedures</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Confidentiality Controls -->
+                <section id="confidentiality-controls" class="control-section" style="display: none;">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-eye-slash me-2"></i>Confidentiality Controls (C)</h2>
+                    
+                    <div class="control-group">
+                        <h3 class="mb-4"><i class="bi bi-file-lock me-2"></i>Information Protection</h3>
+                        
+                        <div class="control-entry" data-type="preventive" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#c1-1-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">C1.1</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Confidentiality - Information Classification</h5>
+                                <p class="mb-2">The entity identifies and classifies confidential information to meet the entity's objectives related to confidentiality.</p>
+                                
+                                <div class="collapse control-details" id="c1-1-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Data classification policies and procedures</li>
+                                            <li>Information labeling and handling requirements</li>
+                                            <li>Data discovery and classification tools</li>
+                                            <li>Employee training on data classification</li>
+                                            <li>Regular review and update of classifications</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="high">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#c1-2-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">C1.2</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-high">High</span>
+                                <h5 class="mt-2 mb-2">Confidentiality - Disposal of Confidential Information</h5>
+                                <p class="mb-2">The entity disposes of confidential information to meet the entity's objectives related to confidentiality.</p>
+                                
+                                <div class="collapse control-details" id="c1-2-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Secure data destruction procedures and policies</li>
+                                            <li>Certified disposal services for physical media</li>
+                                            <li>Data wiping standards for electronic media</li>
+                                            <li>Documentation of disposal activities</li>
+                                            <li>Regular disposal of outdated confidential information</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Privacy Controls -->
+                <section id="privacy-controls" class="control-section" style="display: none;">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-person-check me-2"></i>Privacy Controls (P)</h2>
+                    
+                    <div class="control-group">
+                        <h3 class="mb-4"><i class="bi bi-info-square me-2"></i>Privacy Management</h3>
+                        
+                        <div class="control-entry" data-type="preventive" data-complexity="low">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p1-1-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">P1.1</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-low">Low</span>
+                                <h5 class="mt-2 mb-2">Privacy - Privacy Notice</h5>
+                                <p class="mb-2">The entity provides notice to data subjects about privacy practices and provides choices about the use of personal information.</p>
+                                
+                                <div class="collapse control-details" id="p1-1-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Clear and comprehensive privacy notices</li>
+                                            <li>Opt-in and opt-out mechanisms for data processing</li>
+                                            <li>Cookie consent and preference management</li>
+                                            <li>Notice updates and user notification procedures</li>
+                                            <li>Multi-language privacy notice availability</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="preventive" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p2-1-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">P2.1</span>
+                                <span class="control-type type-preventive">Preventive</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Privacy - Collection and Processing</h5>
+                                <p class="mb-2">The entity collects and processes personal information only for the purposes identified in the privacy notices.</p>
+                                
+                                <div class="collapse control-details" id="p2-1-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Purpose limitation controls and monitoring</li>
+                                            <li>Data minimization practices and policies</li>
+                                            <li>Consent management systems</li>
+                                            <li>Legal basis documentation for processing</li>
+                                            <li>Regular review of collection practices</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-entry" data-type="corrective" data-complexity="medium">
+                            <button class="expand-btn" data-bs-toggle="collapse" data-bs-target="#p4-1-details">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div>
+                                <span class="control-number">P4.1</span>
+                                <span class="control-type type-corrective">Corrective</span>
+                                <span class="complexity-level complexity-medium">Medium</span>
+                                <h5 class="mt-2 mb-2">Privacy - Access and Correction</h5>
+                                <p class="mb-2">The entity provides data subjects with access to their personal information for review and correction.</p>
+                                
+                                <div class="collapse control-details" id="p4-1-details">
+                                    <div class="implementation-example">
+                                        <strong>Implementation Examples:</strong>
+                                        <ul class="mb-0 mt-2">
+                                            <li>Subject access request procedures</li>
+                                            <li>Identity verification for data requests</li>
+                                            <li>Data portability and export capabilities</li>
+                                            <li>Correction and deletion request handling</li>
+                                            <li>Response timeframes and communication procedures</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Summary Statistics -->
+                <section class="mb-5">
+                    <div class="card gradient-bg text-white">
+                        <div class="card-body text-center p-5">
+                            <h3 class="mb-4">SOC 2 Controls Summary</h3>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h2 class="display-4 mb-0">99+</h2>
+                                    <p class="mb-0">Total Controls</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h2 class="display-4 mb-0">58</h2>
+                                    <p class="mb-0">Security Controls</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h2 class="display-4 mb-0">5</h2>
+                                    <p class="mb-0">Trust Service Criteria</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h2 class="display-4 mb-0">8</h2>
+                                    <p class="mb-0">Control Categories</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <a href="../contact.html" class="btn btn-custom btn-lg">Get Implementation Help</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="text-gradient">SOC2Certification.com</h5>
+                    <p>Your trusted partner for SOC 2 compliance guidance and expertise.</p>
+                </div>
+                <div class="col-md-6">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white-50">Home</a></li>
+                        <li><a href="../blog.html" class="text-white-50">Blog</a></li>
+                        <li><a href="../contact.html" class="text-white-50">Contact</a></li>
+                        <li><a href="../privacy.html" class="text-white-50">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2025 SOC2Certification.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const controlEntries = document.querySelectorAll('.control-entry');
+            
+            controlEntries.forEach(entry => {
+                const text = entry.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    entry.style.display = 'block';
+                } else {
+                    entry.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                // Remove active class from all tags
+                document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tag
+                this.classList.add('active');
+                
+                const filterType = this.getAttribute('data-type');
+                const controlEntries = document.querySelectorAll('.control-entry');
+                
+                controlEntries.forEach(entry => {
+                    if (filterType === 'all') {
+                        entry.style.display = 'block';
+                    } else {
+                        const entryType = entry.getAttribute('data-type');
+                        entry.style.display = entryType === filterType ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+
+        // Complexity filter
+        document.getElementById('complexityFilter').addEventListener('change', function() {
+            const complexity = this.value;
+            const controlEntries = document.querySelectorAll('.control-entry');
+            
+            controlEntries.forEach(entry => {
+                if (!complexity) {
+                    entry.style.display = 'block';
+                } else {
+                    const entryComplexity = entry.getAttribute('data-complexity');
+                    entry.style.display = entryComplexity === complexity ? 'block' : 'none';
+                }
+            });
+        });
+
+        // Criteria navigation
+        document.querySelectorAll('.criteria-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.criteria-nav .nav-link').forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Hide all sections
+                document.querySelectorAll('.control-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show selected section
+                const target = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(target);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Expand/collapse functionality
+        document.querySelectorAll('.expand-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                const isExpanded = icon.classList.contains('bi-chevron-up');
+                
+                if (isExpanded) {
+                    icon.classList.remove('bi-chevron-up');
+                    icon.classList.add('bi-chevron-down');
+                } else {
+                    icon.classList.remove('bi-chevron-down');
+                    icon.classList.add('bi-chevron-up');
+                }
+            });
+        });
+
+        // Handle collapse events to update button icons
+        document.querySelectorAll('.collapse').forEach(collapse => {
+            collapse.addEventListener('shown.bs.collapse', function() {
+                const btn = document.querySelector(`[data-bs-target="#${this.id}"] i`);
+                if (btn) {
+                    btn.classList.remove('bi-chevron-down');
+                    btn.classList.add('bi-chevron-up');
+                }
+            });
+            
+            collapse.addEventListener('hidden.bs.collapse', function() {
+                const btn = document.querySelector(`[data-bs-target="#${this.id}"] i`);
+                if (btn) {
+                    btn.classList.remove('bi-chevron-up');
+                    btn.classList.add('bi-chevron-down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

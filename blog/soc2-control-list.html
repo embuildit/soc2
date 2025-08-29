@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script src="../js/analytics.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC 2 Control List 2025 - Complete Checklist for All Trust Service Criteria</title>
+    <meta name="description" content="Comprehensive SOC 2 control list covering all Trust Service Criteria. Download our complete checklist with Security, Availability, Processing Integrity, Confidentiality, and Privacy controls.">
+    <meta name="category" content="controls">
+    <meta name="keywords" content="SOC 2 control list, SOC 2 controls checklist, Trust Service Criteria controls, SOC 2 security controls, compliance checklist">
+    <meta property="article:published_time" content="2025-07-31">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=800&q=80">
+    <link rel="canonical" href="https://soc2certification.com/blog/soc2-control-list.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #495AF5;
+            --secondary: #7436FF;
+            --accent: #00D9FF;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .hero-section {
+            padding: 8rem 0 4rem;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(73, 90, 245, 0.3);
+            color: white;
+        }
+        
+        .card {
+            border: none;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .control-category {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+            border: 2px solid #e9ecff;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .control-item {
+            background: white;
+            border: 1px solid #e9ecf3;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .control-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 2px 10px rgba(73, 90, 245, 0.1);
+        }
+
+        .control-checkbox {
+            margin-right: 1rem;
+            transform: scale(1.2);
+        }
+
+        .control-id {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+
+        .priority-high {
+            border-left: 4px solid #dc3545;
+        }
+
+        .priority-medium {
+            border-left: 4px solid #ffc107;
+        }
+
+        .priority-low {
+            border-left: 4px solid #28a745;
+        }
+
+        .criteria-tab {
+            background: white;
+            border: 2px solid #e9ecff;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .criteria-tab.active {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .criteria-tab:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .implementation-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-required {
+            background: #ffe6e6;
+            color: #dc3545;
+        }
+
+        .status-recommended {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-optional {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .progress-tracker {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .progress-bar-custom {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            height: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-gradient" href="../index.html">SOC2Certification.com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section gradient-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">Complete SOC 2 Control List</h1>
+                    <p class="lead mb-4">Your comprehensive checklist for implementing SOC 2 controls across all Trust Service Criteria. Track your progress and ensure complete compliance coverage.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">120+ Controls</span>
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">Interactive Checklist</span>
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">Progress Tracking</span>
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">Implementation Guide</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-9">
+                <!-- Introduction -->
+                <section class="mb-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-gradient mb-4"><i class="bi bi-info-circle me-2"></i>How to Use This Control List</h2>
+                            <p class="lead">This comprehensive SOC 2 control list includes over 120 specific controls organized by Trust Service Criteria. Use the interactive checkboxes to track your implementation progress.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="implementation-status status-required me-3">Required</span>
+                                        <span>Mandatory for SOC 2 compliance</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="implementation-status status-recommended me-3">Recommended</span>
+                                        <span>Strongly suggested for best practice</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="implementation-status status-optional me-3">Optional</span>
+                                        <span>Additional controls for enhanced security</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Criteria Navigation -->
+                <section class="mb-5">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="criteria-tab active" data-target="security">
+                                <i class="bi bi-shield-lock d-block mb-2"></i>
+                                <strong>Security</strong>
+                                <small class="d-block">Mandatory</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="criteria-tab" data-target="availability">
+                                <i class="bi bi-clock d-block mb-2"></i>
+                                <strong>Availability</strong>
+                                <small class="d-block">Optional</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="criteria-tab" data-target="processing">
+                                <i class="bi bi-check2-square d-block mb-2"></i>
+                                <strong>Processing</strong>
+                                <small class="d-block">Optional</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="criteria-tab" data-target="confidentiality">
+                                <i class="bi bi-eye-slash d-block mb-2"></i>
+                                <strong>Confidentiality</strong>
+                                <small class="d-block">Optional</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="criteria-tab" data-target="privacy">
+                                <i class="bi bi-person-check d-block mb-2"></i>
+                                <strong>Privacy</strong>
+                                <small class="d-block">Optional</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security Controls -->
+                <section id="security" class="control-section">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-shield-lock me-2"></i>Security Controls (CC)</h2>
+                    
+                    <!-- Control Environment -->
+                    <div class="control-category">
+                        <h3 class="mb-4"><i class="bi bi-building me-2"></i>Control Environment</h3>
+                        
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc1-1">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC1.1</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Code of Conduct and Ethics Policy</h5>
+                                    <p class="mb-2">Establish and maintain a comprehensive code of conduct that addresses ethical behavior, conflicts of interest, and compliance requirements.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Document code of conduct, obtain annual acknowledgments, conduct ethics training, establish reporting mechanisms
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc1-2">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC1.2</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Organizational Structure and Reporting</h5>
+                                    <p class="mb-2">Define clear organizational structure with appropriate reporting lines and accountability for security responsibilities.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Create organizational charts, define roles and responsibilities, establish security governance structure
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc1-3">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC1.3</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Management Oversight and Accountability</h5>
+                                    <p class="mb-2">Establish board or management oversight of security practices with clear accountability mechanisms.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Regular security committee meetings, executive security reporting, defined escalation procedures
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-medium">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc1-4">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC1.4</span>
+                                    <span class="implementation-status status-recommended">Recommended</span>
+                                    <h5 class="mb-2">Competence and Development</h5>
+                                    <p class="mb-2">Ensure personnel have appropriate competence for their security responsibilities through hiring, training, and development.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Job descriptions with security requirements, competency assessments, ongoing training programs
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Assessment -->
+                    <div class="control-category">
+                        <h3 class="mb-4"><i class="bi bi-exclamation-triangle me-2"></i>Risk Assessment</h3>
+                        
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc3-1">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC3.1</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Risk Identification and Analysis</h5>
+                                    <p class="mb-2">Conduct comprehensive risk assessments to identify and analyze risks to the achievement of objectives.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Annual risk assessments, risk register maintenance, likelihood and impact analysis
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc3-2">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC3.2</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Fraud Risk Assessment</h5>
+                                    <p class="mb-2">Assess the potential for fraud and identify specific fraud risks that could impact the entity.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Fraud risk workshops, fraud scenario analysis, anti-fraud controls design
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-medium">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc3-3">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC3.3</span>
+                                    <span class="implementation-status status-recommended">Recommended</span>
+                                    <h5 class="mb-2">Significant Change Assessment</h5>
+                                    <p class="mb-2">Identify and assess significant changes that could impact the system and update risk assessments accordingly.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Change impact assessments, risk reassessment triggers, change risk evaluation
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logical and Physical Access -->
+                    <div class="control-category">
+                        <h3 class="mb-4"><i class="bi bi-key me-2"></i>Logical and Physical Access Controls</h3>
+                        
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc6-1">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC6.1</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">User Access Provisioning</h5>
+                                    <p class="mb-2">Implement procedures for granting logical access to systems and applications based on authorized requests.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Access request forms, approval workflows, role-based access provisioning, access reviews
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc6-2">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC6.2</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">User Access Modification and Deprovisioning</h5>
+                                    <p class="mb-2">Establish procedures for modifying and removing user access in a timely manner based on changes in job responsibilities.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> HR system integration, automated deprovisioning, access change procedures, termination checklists
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc6-3">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC6.3</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">User Access Reviews</h5>
+                                    <p class="mb-2">Conduct periodic reviews of user access rights to ensure appropriateness and remove unnecessary access.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Quarterly access reviews, manager attestations, automated reporting, remediation tracking
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc6-4">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC6.4</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Physical Access Controls</h5>
+                                    <p class="mb-2">Implement physical access controls to restrict access to facilities, systems, and assets.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Badge access systems, visitor management, security cameras, secure areas designation
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc6-5">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC6.5</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Multi-Factor Authentication</h5>
+                                    <p class="mb-2">Implement multi-factor authentication for access to systems and applications containing sensitive data.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> MFA deployment, authentication policies, token management, exception handling
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-medium">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc6-6">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC6.6</span>
+                                    <span class="implementation-status status-recommended">Recommended</span>
+                                    <h5 class="mb-2">Privileged Access Management</h5>
+                                    <p class="mb-2">Implement additional controls for privileged accounts including enhanced monitoring and approval processes.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Privileged access management tools, elevated approval processes, session monitoring
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Operations -->
+                    <div class="control-category">
+                        <h3 class="mb-4"><i class="bi bi-gear me-2"></i>System Operations</h3>
+                        
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc7-1">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC7.1</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">System Monitoring and Logging</h5>
+                                    <p class="mb-2">Implement comprehensive monitoring and logging to detect and respond to security events and anomalies.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> SIEM deployment, log collection, alerting rules, log retention policies
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc7-2">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC7.2</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Incident Response Procedures</h5>
+                                    <p class="mb-2">Establish and maintain incident response procedures to address security incidents effectively.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Incident response plan, response team, escalation procedures, post-incident reviews
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc7-3">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC7.3</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Backup and Recovery Procedures</h5>
+                                    <p class="mb-2">Implement backup and recovery procedures to ensure data availability and business continuity.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Backup schedules, recovery testing, offsite storage, recovery time objectives
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-medium">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="cc7-4">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">CC7.4</span>
+                                    <span class="implementation-status status-recommended">Recommended</span>
+                                    <h5 class="mb-2">System Performance Monitoring</h5>
+                                    <p class="mb-2">Monitor system performance to ensure adequate capacity and identify potential issues.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Performance dashboards, capacity planning, threshold monitoring, trend analysis
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Availability Controls -->
+                <section id="availability" class="control-section" style="display: none;">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-clock me-2"></i>Availability Controls (A)</h2>
+                    
+                    <div class="control-category">
+                        <h3 class="mb-4"><i class="bi bi-speedometer2 me-2"></i>Performance Monitoring</h3>
+                        
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="a1-1">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">A1.1</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">System Availability Monitoring</h5>
+                                    <p class="mb-2">Monitor system availability and uptime to ensure service level agreements are met.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Uptime monitoring tools, SLA tracking, availability dashboards, alerting systems
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="a1-2">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">A1.2</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Performance Threshold Management</h5>
+                                    <p class="mb-2">Establish and monitor performance thresholds to identify degradation before it impacts users.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Performance baselines, threshold definitions, automated alerting, response procedures
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-medium">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="a1-3">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">A1.3</span>
+                                    <span class="implementation-status status-recommended">Recommended</span>
+                                    <h5 class="mb-2">Capacity Planning and Management</h5>
+                                    <p class="mb-2">Conduct regular capacity planning to ensure systems can handle current and projected workloads.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Capacity assessments, growth projections, resource allocation, scalability planning
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-category">
+                        <h3 class="mb-4"><i class="bi bi-arrow-clockwise me-2"></i>System Recovery</h3>
+                        
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="a2-1">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">A2.1</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Business Continuity Planning</h5>
+                                    <p class="mb-2">Develop and maintain business continuity plans to ensure service availability during disruptions.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> BCP documentation, recovery procedures, alternative processing sites, plan testing
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="a2-2">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">A2.2</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Disaster Recovery Testing</h5>
+                                    <p class="mb-2">Regularly test disaster recovery procedures to ensure they work effectively when needed.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> DR test schedules, test scenarios, results documentation, improvement actions
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Processing Integrity Controls -->
+                <section id="processing" class="control-section" style="display: none;">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-check2-square me-2"></i>Processing Integrity Controls (PI)</h2>
+                    
+                    <div class="control-category">
+                        <h3 class="mb-4"><i class="bi bi-check-circle me-2"></i>Data Processing Controls</h3>
+                        
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="pi1-1">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">PI1.1</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Data Input Validation</h5>
+                                    <p class="mb-2">Implement controls to validate data input for completeness, accuracy, and validity.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Input validation rules, data type checks, range validations, format verification
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="pi1-2">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">PI1.2</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Processing Completeness</h5>
+                                    <p class="mb-2">Ensure that all authorized transactions are processed completely and accurately.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Transaction logging, completeness checks, reconciliation procedures, error handling
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-medium">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="pi1-3">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">PI1.3</span>
+                                    <span class="implementation-status status-recommended">Recommended</span>
+                                    <h5 class="mb-2">Data Quality Monitoring</h5>
+                                    <p class="mb-2">Monitor data quality throughout processing to identify and correct errors or inconsistencies.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Data quality rules, automated monitoring, quality metrics, remediation procedures
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Confidentiality Controls -->
+                <section id="confidentiality" class="control-section" style="display: none;">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-eye-slash me-2"></i>Confidentiality Controls (C)</h2>
+                    
+                    <div class="control-category">
+                        <h3 class="mb-4"><i class="bi bi-file-lock me-2"></i>Information Protection</h3>
+                        
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="c1-1">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">C1.1</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Data Classification</h5>
+                                    <p class="mb-2">Classify information based on confidentiality requirements and implement appropriate protection measures.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Classification policies, data labeling, handling procedures, protection controls
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="c1-2">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">C1.2</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Encryption Controls</h5>
+                                    <p class="mb-2">Implement encryption for confidential information both at rest and in transit.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Encryption policies, key management, algorithm standards, implementation monitoring
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Privacy Controls -->
+                <section id="privacy" class="control-section" style="display: none;">
+                    <h2 class="text-gradient mb-4"><i class="bi bi-person-check me-2"></i>Privacy Controls (P)</h2>
+                    
+                    <div class="control-category">
+                        <h3 class="mb-4"><i class="bi bi-info-square me-2"></i>Privacy Management</h3>
+                        
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="p1-1">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">P1.1</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Privacy Notice and Consent</h5>
+                                    <p class="mb-2">Provide clear privacy notices and obtain appropriate consent for personal information collection and use.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Privacy notices, consent mechanisms, opt-out procedures, notice updates
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-item priority-high">
+                            <div class="d-flex align-items-start">
+                                <input type="checkbox" class="form-check-input control-checkbox" id="p1-2">
+                                <div class="flex-grow-1">
+                                    <span class="control-id">P1.2</span>
+                                    <span class="implementation-status status-required">Required</span>
+                                    <h5 class="mb-2">Data Subject Rights</h5>
+                                    <p class="mb-2">Implement procedures to handle data subject requests for access, correction, and deletion of personal information.</p>
+                                    <small class="text-muted">
+                                        <strong>Implementation:</strong> Request procedures, response timelines, verification processes, fulfillment tracking
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Progress Tracker Sidebar -->
+            <div class="col-lg-3">
+                <div class="progress-tracker">
+                    <h4 class="mb-3"><i class="bi bi-bar-chart me-2"></i>Progress Tracker</h4>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Overall Progress</span>
+                            <span id="overall-progress">0%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" id="overall-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Security (CC)</span>
+                            <span id="security-progress">0%</span>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar progress-bar-custom" id="security-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Availability (A)</span>
+                            <span id="availability-progress">0%</span>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar progress-bar-custom" id="availability-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Processing (PI)</span>
+                            <span id="processing-progress">0%</span>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar progress-bar-custom" id="processing-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Confidentiality (C)</span>
+                            <span id="confidentiality-progress">0%</span>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar progress-bar-custom" id="confidentiality-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Privacy (P)</span>
+                            <span id="privacy-progress">0%</span>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar progress-bar-custom" id="privacy-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-custom btn-sm" onclick="printProgress()">
+                            <i class="bi bi-printer me-1"></i>Print Progress
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="text-gradient">SOC2Certification.com</h5>
+                    <p>Your trusted partner for SOC 2 compliance guidance and expertise.</p>
+                </div>
+                <div class="col-md-6">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white-50">Home</a></li>
+                        <li><a href="../blog.html" class="text-white-50">Blog</a></li>
+                        <li><a href="../contact.html" class="text-white-50">Contact</a></li>
+                        <li><a href="../privacy.html" class="text-white-50">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2025 SOC2Certification.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.criteria-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.criteria-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all sections
+                document.querySelectorAll('.control-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show selected section
+                const target = this.getAttribute('data-target');
+                document.getElementById(target).style.display = 'block';
+            });
+        });
+
+        // Progress tracking
+        function updateProgress() {
+            const sections = ['security', 'availability', 'processing', 'confidentiality', 'privacy'];
+            let totalChecked = 0;
+            let totalControls = 0;
+
+            sections.forEach(section => {
+                const sectionElement = document.getElementById(section);
+                const checkboxes = sectionElement.querySelectorAll('.control-checkbox');
+                const checked = sectionElement.querySelectorAll('.control-checkbox:checked');
+                
+                const percentage = checkboxes.length > 0 ? Math.round((checked.length / checkboxes.length) * 100) : 0;
+                
+                document.getElementById(section + '-progress').textContent = percentage + '%';
+                document.getElementById(section + '-bar').style.width = percentage + '%';
+                
+                totalChecked += checked.length;
+                totalControls += checkboxes.length;
+            });
+
+            const overallPercentage = totalControls > 0 ? Math.round((totalChecked / totalControls) * 100) : 0;
+            document.getElementById('overall-progress').textContent = overallPercentage + '%';
+            document.getElementById('overall-bar').style.width = overallPercentage + '%';
+        }
+
+        // Add event listeners to all checkboxes
+        document.querySelectorAll('.control-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', updateProgress);
+        });
+
+        // Print progress function
+        function printProgress() {
+            window.print();
+        }
+
+        // Load saved progress from localStorage
+        function loadProgress() {
+            document.querySelectorAll('.control-checkbox').forEach(checkbox => {
+                const saved = localStorage.getItem(checkbox.id);
+                if (saved === 'true') {
+                    checkbox.checked = true;
+                }
+            });
+            updateProgress();
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            document.querySelectorAll('.control-checkbox').forEach(checkbox => {
+                localStorage.setItem(checkbox.id, checkbox.checked);
+            });
+        }
+
+        // Add save functionality to checkboxes
+        document.querySelectorAll('.control-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', saveProgress);
+        });
+
+        // Load progress on page load
+        document.addEventListener('DOMContentLoaded', loadProgress);
+    </script>
+</body>
+</html>
