@@ -290,72 +290,77 @@
             }
 
             async scanForBlogPosts() {
-                // Prioritize existing files first to avoid unnecessary network calls
-              const knownBlogFiles = [
-                  'soc2-getting-started-guide.html',
-                  'soc2-automation-platforms-review.html',
-                  'soc2-audit-cost-breakdown.html',
-                  'soc2-certification-saint-petersburg.html',
-                  'tugboat-logic-competitors.html',
-                  'koop-compliance-automation-review.html',
-                  'sprinto-vs-tugboat-logic.html',
-                  'soc2-automation-market-size-2025.html',
-                  'soc2-automation-tools-guide.html',
-                  'soc2-compliance-requirements.html',
-                  'soc2-control-objectives.html',
-                  'soc2-control-list.html',
-                  'soc2-security-controls.html',
-                  'list-of-soc2-controls.html',
-                  'soc1-vs-soc2.html',
-                  'iso-27001-certification-saint-petersburg-russia.html',
-                  'vanta-vs-tugboat-logic-comparison.html',
-                  'drata-vs-tugboat-logic-comparison.html',
-                  'koop-technologies-housekeeper-vs-vanta-soc2.html',
-                  'soc2-certification-chicago.html',
-                  'tugboat-logic-pricing-2025.html',
-                  'secureframe-vs-vanta-vs-drata-comparison.html',
-                  'drata-vs-tugboat-logic-automation-comparison.html'
-              ];
-
-                const posts = [];
+                let blogFiles = [];
                 
-                // Use concurrent requests with a limit to avoid overwhelming the browser
-                const maxConcurrent = 3;
-                const chunks = [];
-                for (let i = 0; i < knownBlogFiles.length; i += maxConcurrent) {
-                    chunks.push(knownBlogFiles.slice(i, i + maxConcurrent));
-                }
-
-                for (const chunk of chunks) {
-                    const promises = chunk.map(async filename => {
-                        try {
-                            const response = await fetch(`blog/${filename}`, { method: 'HEAD' });
-                            if (response.ok) {
-                                const metadata = await this.extractMetadata(`blog/${filename}`);
-                                return metadata;
-                            }
-                        } catch (error) {
-                            return null;
+                try {
+                    // Auto-discover blog files from sitemap or directory listing
+                    const sitemapResponse = await fetch('sitemap.xml');
+                    if (sitemapResponse.ok) {
+                        const sitemapText = await sitemapResponse.text();
+                        const blogMatches = sitemapText.match(/blog\/[^<]+\.html/g);
+                        if (blogMatches) {
+                            blogFiles = blogMatches.map(url => url.replace('blog/', ''));
                         }
-                        return null;
-                    });
-
-                    const results = await Promise.all(promises);
-                    posts.push(...results.filter(Boolean));
+                    }
+                } catch (error) {
+                    console.log('Could not fetch sitemap, using fallback method');
                 }
+
+                // Fallback to known files if sitemap fails
+                if (blogFiles.length === 0) {
+                    blogFiles = [
+                        'soc2-getting-started-guide.html',
+                        'soc2-automation-platforms-review.html',
+                        'soc2-audit-cost-breakdown.html',
+                        'soc2-certification-saint-petersburg.html',
+                        'tugboat-logic-competitors.html',
+                        'koop-compliance-automation-review.html',
+                        'sprinto-vs-tugboat-logic.html',
+                        'soc2-automation-market-size-2025.html',
+                        'soc2-automation-tools-guide.html',
+                        'soc2-compliance-requirements.html',
+                        'soc2-control-objectives.html',
+                        'soc2-control-list.html',
+                        'soc2-security-controls.html',
+                        'list-of-soc2-controls.html',
+                        'soc1-vs-soc2.html',
+                        'iso-27001-certification-saint-petersburg-russia.html',
+                        'vanta-vs-tugboat-logic-comparison.html',
+                        'drata-vs-tugboat-logic-comparison.html',
+                        'koop-technologies-housekeeper-vs-vanta-soc2.html',
+                        'soc2-certification-chicago.html',
+                        'tugboat-logic-pricing-2025.html',
+                        'secureframe-vs-vanta-vs-drata-comparison.html',
+                        'drata-vs-tugboat-logic-automation-comparison.html'
+                    ];
+                }
+
+                // Process all files concurrently for better performance
+                const posts = await Promise.all(blogFiles.map(async filename => {
+                    try {
+                        const metadata = await this.extractMetadata(`blog/${filename}`);
+                        return metadata;
+                    } catch (error) {
+                        return null;
+                    }
+                }));
+
+                const validPosts = posts.filter(Boolean);
 
                 // Fallback to sample posts if no real posts found
-                if (posts.length === 0) {
-                    posts.push(...this.generateSamplePosts());
+                if (validPosts.length === 0) {
+                    validPosts.push(...this.generateSamplePosts());
                 }
 
-                this.allPosts = posts.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+                this.allPosts = validPosts.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
                 this.filteredPosts = [...this.allPosts];
             }
 
             async extractMetadata(filePath) {
                 try {
                     const response = await fetch(filePath);
+                    if (!response.ok) return null;
+                    
                     const html = await response.text();
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
