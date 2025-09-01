@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An SEO-optimized guide for FinTech companies on why and how to scope a SOC 2 audit for Processing Integrity and Confidentiality, not just Security.">
+    <meta name="keywords" content="SOC 2 for FinTech, Processing Integrity, Confidentiality, SOC 2 scoping, FinTech compliance, Trust Services Criteria, financial audit">
+    <title>SOC 2 for FinTech: Beyond Security - Scoping for Processing Integrity and Confidentiality</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1, h2, h3, h4 { color: #16a085; }
+        h1 { border-bottom: 2px solid #e6f7f4; padding-bottom: 10px; }
+        .tsc-deep-dive { border: 1px solid #e6f7f4; border-left: 5px solid #16a085; padding: 20px; margin: 2rem 0; border-radius: 5px; }
+        code { background-color: #ecf0f1; padding: 2px 5px; border-radius: 3px; }
+        strong { color: #117a65; }
+        .business-case { background-color: #f8f9fa; border: 1px solid #dee2e6; padding: 20px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>SOC 2 for FinTech: Beyond Security - Scoping for Processing Integrity and Confidentiality</h1>
+
+    <p>For a modern FinTech company, achieving a SOC 2 report is a critical milestone. It’s the key that unlocks enterprise deals and builds foundational trust. However, many FinTechs make a crucial scoping error: they only include the <strong>Security</strong> Trust Services Criterion (TSC), also known as the Common Criteria.</p>
+
+    <p>While Security is mandatory, for a company handling financial data and transactions, it's just the table stakes. Your customers and partners aren't just asking, "Is your platform secure?" They are asking, "Can I trust your calculations?" and "Is my sensitive financial data being kept private?"</p>
+
+    <p>This is where <strong>Processing Integrity</strong> and <strong>Confidentiality</strong> come in. Including these two TSCs in your SOC 2 scope is how you move from a generic security report to a powerful attestation of trust that resonates directly with the concerns of the financial industry.</p>
+
+    <h2>Why Security Alone is Not Enough for FinTech</h2>
+    <p>Imagine a payment processing platform. A Security-only SOC 2 report says they have good firewalls, encryption, and access controls. That's great, but it says nothing about whether a $100.00 transaction is processed as $100.00, or if it could accidentally become $1,000.00 due to a bug. It also doesn't explicitly cover how the privacy of the transaction history is maintained. This is the gap that Processing Integrity and Confidentiality fill.</p>
+
+    <div class="tsc-deep-dive">
+        <h2>Deep Dive: The Processing Integrity TSC</h2>
+        <p><strong>Definition:</strong> <em>"System processing is complete, valid, accurate, timely, and authorized to meet the entity’s objectives."</em></p>
+        <p>This is the "show your work" criterion. It’s your proof that the core function of your FinTech product—be it calculating interest, executing trades, or generating invoices—is reliable and correct.</p>
+        
+        <h3>How to Scope for Processing Integrity:</h3>
+        <ol>
+            <li><strong>Identify Critical Processing Activities:</strong> Map out the exact systems, microservices, and data flows responsible for your core financial operations. This is your scope. For a lending platform, this would be the interest calculation engine and the loan disbursement workflow.</li>
+            <li><strong>Implement and Document Key Controls:</strong> You are likely already doing many of these things. The key is to formalize and document them.</li>
+        </ol>
+
+        <h4>Controls & Evidence Examples:</h4>
+        <ul>
+            <li><strong>Input Controls:</strong>
+                <ul>
+                    <li><strong>Control:</strong> Implement strict data validation on all incoming financial data (e.g., API endpoints, file uploads).</li>
+                    <li><strong>Evidence:</strong> Documented API specifications (e.g., OpenAPI/Swagger spec), screenshots of input validation rules in your code, logs showing rejected malformed data.</li>
+                </ul>
+            </li>
+            <li><strong>Processing Controls:</strong>
+                <ul>
+                    <li><strong>Control:</strong> Perform daily or even hourly reconciliations between critical data stores. For a payments company, reconcile the internal transaction ledger with the processor's settlement reports.</li>
+                    <li><strong>Evidence:</strong> The reconciliation reports themselves, documentation on the reconciliation process, and alerts generated when a discrepancy is found.</li>
+                </ul>
+            </li>
+            <li><strong>Output Controls:</strong>
+                <ul>
+                    <li><strong>Control:</strong> Require a review and approval step before a system sends out critical financial reports or statements to customers.</li>
+                    <li><strong>Evidence:</strong> A ticketing system (like Jira) showing the approval workflow, or application logs that record the review event.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tsc-deep-dive">
+        <h2>Deep Dive: The Confidentiality TSC</h2>
+        <p><strong>Definition:</strong> <em>"Information designated as confidential is protected as committed or agreed."</em></p>
+        <p>For FinTech, "confidential information" is a broad and critical category. It goes far beyond just name and email. It includes transaction history, portfolio contents, bank account details, and investment strategies. This TSC proves you have specific controls to protect this highly sensitive data.</p>
+
+        <h3>How to Scope for Confidentiality:</h3>
+        <ol>
+            <li><strong>Define and Classify Confidential Data:</strong> Create a formal data classification policy. Identify exactly what your system considers "Confidential" (e.g., financial statements, account numbers) vs. "Internal" vs. "Public". This policy is a foundational piece of evidence.</li>
+            <li><strong>Trace the Data Flow:</strong> Map where this confidential data lives and how it moves through your systems. This will show you where to apply your controls.</li>
+        </ol>
+
+        <h4>Controls & Evidence Examples:</h4>
+        <ul>
+            <li><strong>Encryption of Data at Rest & In Transit:</strong>
+                <ul>
+                    <li><strong>Control:</strong> All databases, S3 buckets, and other storage containing confidential data must be encrypted. All data transmission must use strong TLS (e.g., TLS 1.2+).</li>
+                    <li><strong>Evidence:</strong> Screenshots of AWS KMS keys, database encryption settings (e.g., RDS encryption enabled), and load balancer configurations showing the TLS policy.</li>
+                </ul>
+            </li>
+            <li><strong>Strict Access Control:</strong>
+                <ul>
+                    <li><strong>Control:</strong> Implement and enforce "need-to-know" access. A customer support agent might need to see a customer's name, but should not be able to see their full transaction history unless explicitly required for a specific task.</li>
+                    <li><strong>Evidence:</strong> Your IAM policies, database role definitions, and application-level permission settings. Quarterly access reviews for systems holding confidential data are also key evidence.</li>
+                </ul>
+            </li>
+            <li><strong>Data Destruction:</strong>
+                <ul>
+                    <li><strong>Control:</strong> Have a documented policy and an automated process for securely deleting confidential data upon customer request or at the end of a contractual retention period.</li>
+                    <li><strong>Evidence:</strong> The data retention policy document, and technical documentation or code for the data deletion scripts/process.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="business-case">
+        <h2>The Business Case: From Compliance Cost to Competitive Advantage</h2>
+        <p>Viewing Processing Integrity and Confidentiality as just another compliance cost is a mistake. For a FinTech, it's a strategic investment with clear ROI:</p>
+        <ul>
+            <li><strong>Accelerated Sales Cycles:</strong> You can proactively provide a report that answers the deep, specific questions enterprise customers and financial partners will inevitably ask. This shortens the due diligence process from months to weeks.</li>
+            <li><strong>Clear Market Differentiator:</strong> When a prospect is comparing your service with a competitor who only has a Security-only report, your comprehensive attestation becomes a powerful symbol of maturity and trustworthiness.</li>
+            <li><strong>Reduced Risk:</strong> The process of implementing these controls genuinely makes your platform more robust and secure, reducing the risk of calculation errors that can destroy customer trust (and lead to financial liability).</li>
+        </ul>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>For a FinTech company, trust is your most valuable asset. A SOC 2 report is a primary vehicle for delivering that trust. By going beyond the baseline Security criterion and thoughtfully scoping your audit to include Processing Integrity and Confidentiality, you are not just ticking a compliance box. You are creating a powerful statement about your commitment to accuracy and privacy, aligning your compliance program directly with the core concerns of your customers and positioning your company as a leader in a competitive market.</p>
+
+</body>
+</html>
