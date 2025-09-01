@@ -31,6 +31,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://soc2certification.com/blog/common-mistakes-in-soc2-audit.html</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://soc2certification.com/blog/drata-vs-tugboat-logic-automation-comparison.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -38,6 +44,12 @@
   </url>
   <url>
     <loc>https://soc2certification.com/blog/drata-vs-tugboat-logic-comparison.html</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://soc2certification.com/blog/how-to-choose-soc2-auditor.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -67,6 +79,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://soc2certification.com/blog/pen-testing-for-soc2.html</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://soc2certification.com/blog/secureframe-vs-vanta-vs-drata-comparison.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -80,6 +98,12 @@
   </url>
   <url>
     <loc>https://soc2certification.com/blog/soc2-access-controls-aws-lambda.html</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://soc2certification.com/blog/soc2-and-gdpr-compliance.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -122,6 +146,12 @@
   </url>
   <url>
     <loc>https://soc2certification.com/blog/soc2-certification-saint-petersburg.html</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://soc2certification.com/blog/soc2-compliance-for-ai-ml-companies.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
