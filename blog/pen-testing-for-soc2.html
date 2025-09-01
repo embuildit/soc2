@@ -18,73 +18,537 @@
         :root {
             --primary: #495AF5;
             --secondary: #7436FF;
+            --accent: #00D9FF;
         }
+        
         .gradient-bg {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
         }
-        .text-gradient {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
         }
-        .card {
+        
+        .hero-section {
+            padding: 8rem 0 4rem;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             border: none;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-            border-radius: 15px;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(73, 90, 245, 0.3);
+            color: white;
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .article-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--secondary);
+        }
+        
+        .category-badge {
+            background: var(--primary);
+        }
+        
+        .back-to-blog {
+            margin-bottom: 2rem;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark gradient-bg fixed-top">
         <div class="container">
-            <a class="navbar-brand text-gradient" href="../index.html">SOC2Certification.com</a>
-            <div class="collapse navbar-collapse">
+            <a class="navbar-brand" href="../index.html">
+                <i class="bi bi-shield-check me-2"></i>
+                SOC2Certification.com
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#vendors">Vendors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../blog.html">Blog</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero-section gradient-bg py-5">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold mb-4">Penetration Testing and SOC 2</h1>
-            <p class="lead mb-4">A Deep Dive into Strengthening Your Security Posture</p>
-        </div>
-    </section>
-
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card mb-5">
-                    <div class="card-body">
-                        <h3 class="card-title text-gradient mb-4">Is Penetration Testing Required for SOC 2?</h3>
-                        <p>While not explicitly mandatory for all SOC 2 audits, penetration testing is strongly recommended and often expected by auditors and clients, especially for the 'Security' TSC. It serves as a powerful validation of your vulnerability management program (CC4.1).</p>
-                    </div>
-                </div>
-
-                <div class="card mb-5">
-                    <div class="card-body">
-                        <h3 class="card-title text-gradient mb-4">What Does a SOC 2 Pen Test Involve?</h3>
-                        <p>A penetration test for SOC 2 is a simulated cyber attack against your systems to identify and exploit vulnerabilities. The scope should align with your SOC 2 system description and typically includes:</p>
-                        <ul>
-                            <li>Network and application vulnerability scanning</li>
-                            <li>Manual testing to exploit identified vulnerabilities</li>
-                            <li>A detailed report with findings, risk levels, and remediation recommendations</li>
-                        </ul>
-                    </div>
+    <section class="hero-section gradient-bg">
+        <div class="container">
+            <div class="back-to-blog">
+                <a href="../blog.html" class="btn btn-outline-light">
+                    <i class="bi bi-arrow-left me-2"></i>Back to Blog
+                </a>
+            </div>
+            <div class="text-center">
+                <span class="badge category-badge mb-3">Security Testing</span>
+                <h1 class="display-5 fw-bold mb-4">Penetration Testing for SOC 2: Complete Security Guide</h1>
+                <p class="lead mb-4">Master <strong>penetration testing requirements</strong> for SOC 2 compliance with detailed methodologies, vendor selection, and control mapping strategies</p>
+                <div class="d-flex justify-content-center gap-4 text-sm">
+                    <span><i class="bi bi-calendar me-1"></i>August 31, 2025</span>
+                    <span><i class="bi bi-clock me-1"></i>12 min read</span>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer class="bg-dark text-white py-5">
-        <div class="container text-center">
-            <p>&copy; 2025 SOC2Certification.com. All rights reserved.</p>
+    <section class="py-5">
+        <div class="container">
+            <div class="article-content">
+                
+                <div class="bg-light p-4 rounded mb-5">
+                    <h3 class="mb-4"><i class="bi bi-shield-exclamation me-2"></i>Why Penetration Testing Matters for SOC 2</h3>
+                    <p class="mb-0">While not explicitly required, <strong>penetration testing is increasingly expected</strong> by SOC 2 auditors and enterprise clients. Over <strong>85% of SOC 2 Type II reports</strong> now include penetration testing as evidence for security controls. It's become a practical necessity for competitive SOC 2 compliance and customer trust.</p>
+                </div>
+
+                <h2>Is Penetration Testing Required for SOC 2?</h2>
+                
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="alert alert-info">
+                            <h5><i class="bi bi-info-circle me-2"></i>Official Requirement</h5>
+                            <p class="mb-0">Penetration testing is <strong>not explicitly required</strong> by SOC 2 standards. However, it's strongly recommended as evidence for multiple security controls.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="alert alert-warning">
+                            <h5><i class="bi bi-exclamation-triangle me-2"></i>Practical Reality</h5>
+                            <p class="mb-0">Most auditors and enterprise clients <strong>expect penetration testing</strong> as standard practice for demonstrating robust security controls.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>When Penetration Testing is Essential for SOC 2:</h3>
+                <table class="table table-bordered mb-4">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Penetration Testing Requirement</th>
+                            <th>Rationale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Internet-facing applications</td>
+                            <td>Highly recommended</td>
+                            <td>Validates external attack surface security</td>
+                        </tr>
+                        <tr>
+                            <td>Healthcare/HIPAA companies</td>
+                            <td>Expected by auditors</td>
+                            <td>Regulatory compliance and risk management</td>
+                        </tr>
+                        <tr>
+                            <td>Financial services</td>
+                            <td>Often mandatory</td>
+                            <td>Regulatory requirements and customer expectations</td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise SaaS platforms</td>
+                            <td>Customer requirement</td>
+                            <td>Due diligence and security assurance</td>
+                        </tr>
+                        <tr>
+                            <td>Government contractors</td>
+                            <td>Required</td>
+                            <td>FedRAMP and CMMC compliance requirements</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2>SOC 2 Controls Enhanced by Penetration Testing</h2>
+                
+                <p>Penetration testing provides critical evidence for multiple SOC 2 controls across all Trust Services Criteria:</p>
+                
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">Security Controls</h5>
+                                <ul>
+                                    <li><strong>CC6.1:</strong> Logical and Physical Access Controls</li>
+                                    <li><strong>CC6.2:</strong> Transmission of Data</li>
+                                    <li><strong>CC6.3:</strong> Boundary Protection</li>
+                                    <li><strong>CC7.1:</strong> System Monitoring</li>
+                                    <li><strong>CC7.2:</strong> Detection of Anomalies</li>
+                                </ul>
+                                <p class="card-text"><strong>Evidence Value:</strong> Demonstrates effectiveness of preventive and detective controls through simulated attacks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-success">Change Management</h5>
+                                <ul>
+                                    <li><strong>CC8.1:</strong> Change Authorization</li>
+                                    <li><strong>CC8.2:</strong> System Development</li>
+                                    <li><strong>A1.2:</strong> Capacity Planning</li>
+                                    <li><strong>PI1.1:</strong> Data Processing</li>
+                                </ul>
+                                <p class="card-text"><strong>Evidence Value:</strong> Validates that changes don't introduce new vulnerabilities and systems perform as designed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Types of Penetration Testing for SOC 2</h2>
+                
+                <h3>1. External Penetration Testing</h3>
+                <div class="bg-light p-4 rounded mb-4">
+                    <p><strong>Scope:</strong> Tests internet-facing systems and applications from an external attacker's perspective.</p>
+                    <h5>Typical Testing Areas:</h5>
+                    <ul>
+                        <li>Web applications and APIs</li>
+                        <li>Mail servers and DNS infrastructure</li>
+                        <li>VPN endpoints and remote access systems</li>
+                        <li>Cloud infrastructure and services</li>
+                        <li>Public-facing databases or services</li>
+                    </ul>
+                    <p><strong>SOC 2 Relevance:</strong> Essential for CC6.3 (Boundary Protection) and demonstrates external threat defense capabilities.</p>
+                </div>
+                
+                <h3>2. Internal Penetration Testing</h3>
+                <div class="bg-light p-4 rounded mb-4">
+                    <p><strong>Scope:</strong> Simulates insider threats or attackers who have gained initial network access.</p>
+                    <h5>Typical Testing Areas:</h5>
+                    <ul>
+                        <li>Internal network segmentation</li>
+                        <li>Active Directory and authentication systems</li>
+                        <li>Internal applications and databases</li>
+                        <li>Network devices and infrastructure</li>
+                        <li>Workstation and server security</li>
+                    </ul>
+                    <p><strong>SOC 2 Relevance:</strong> Critical for CC6.1 (Logical Access Controls) and network security validation.</p>
+                </div>
+                
+                <h3>3. Web Application Penetration Testing</h3>
+                <div class="bg-light p-4 rounded mb-4">
+                    <p><strong>Scope:</strong> Deep security assessment of web applications, APIs, and mobile applications.</p>
+                    <h5>Testing Focus Areas:</h5>
+                    <table class="table table-sm">
+                        <tr><td>OWASP Top 10 vulnerabilities</td><td>Authentication and session management</td></tr>
+                        <tr><td>Input validation and injection flaws</td><td>Authorization and access controls</td></tr>
+                        <tr><td>Business logic vulnerabilities</td><td>Data encryption and transmission</td></tr>
+                        <tr><td>API security and rate limiting</td><td>Error handling and information disclosure</td></tr>
+                    </table>
+                    <p><strong>SOC 2 Relevance:</strong> Essential for PI1.1 (Processing Integrity) and CC6.2 (Data Transmission).</p>
+                </div>
+                
+                <h3>4. Cloud Security Assessment</h3>
+                <div class="bg-light p-4 rounded mb-4">
+                    <p><strong>Scope:</strong> Security testing of cloud infrastructure, services, and configurations.</p>
+                    <h5>Assessment Areas:</h5>
+                    <ul>
+                        <li>Cloud service configurations (AWS, Azure, GCP)</li>
+                        <li>Container security and orchestration</li>
+                        <li>Serverless function security</li>
+                        <li>Cloud storage and database security</li>
+                        <li>Identity and access management (IAM)</li>
+                    </ul>
+                    <p><strong>SOC 2 Relevance:</strong> Critical for modern cloud-first organizations to demonstrate comprehensive security coverage.</p>
+                </div>
+                
+                <h2>Penetration Testing Methodology for SOC 2</h2>
+                
+                <h3>Phase 1: Planning and Reconnaissance (1-2 weeks)</h3>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <h5>Scope Definition</h5>
+                        <ul>
+                            <li>Align testing scope with SOC 2 system description</li>
+                            <li>Define in-scope systems and applications</li>
+                            <li>Establish testing windows and constraints</li>
+                            <li>Identify critical business systems to protect</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Information Gathering</h5>
+                        <ul>
+                            <li>Network architecture documentation review</li>
+                            <li>Asset inventory and service enumeration</li>
+                            <li>Technology stack identification</li>
+                            <li>Threat modeling and attack surface mapping</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Phase 2: Vulnerability Assessment (1 week)</h3>
+                <ul>
+                    <li><strong>Automated Scanning:</strong> Network, web application, and infrastructure vulnerability scanning</li>
+                    <li><strong>Manual Validation:</strong> Verification of automated findings to eliminate false positives</li>
+                    <li><strong>Configuration Review:</strong> Security configuration assessment of systems and applications</li>
+                    <li><strong>Risk Prioritization:</strong> Ranking vulnerabilities by severity and business impact</li>
+                </ul>
+                
+                <h3>Phase 3: Exploitation and Testing (1-2 weeks)</h3>
+                <div class="alert alert-warning mb-4">
+                    <strong>Important:</strong> All exploitation activities should be carefully controlled and documented to avoid business disruption while demonstrating real security risks.
+                </div>
+                
+                <ul>
+                    <li><strong>Manual Exploitation:</strong> Careful exploitation of identified vulnerabilities</li>
+                    <li><strong>Privilege Escalation:</strong> Testing ability to gain higher system privileges</li>
+                    <li><strong>Lateral Movement:</strong> Assessment of internal network security and segmentation</li>
+                    <li><strong>Data Access Testing:</strong> Validation of data protection and access controls</li>
+                </ul>
+                
+                <h3>Phase 4: Reporting and Remediation (1 week)</h3>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <h5>Executive Summary</h5>
+                        <ul>
+                            <li>Overall security posture assessment</li>
+                            <li>Key risk areas and business impact</li>
+                            <li>Compliance implications for SOC 2</li>
+                            <li>Strategic recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Technical Findings</h5>
+                        <ul>
+                            <li>Detailed vulnerability descriptions</li>
+                            <li>Risk ratings and CVSS scores</li>
+                            <li>Proof-of-concept and evidence</li>
+                            <li>Specific remediation guidance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Selecting Penetration Testing Vendors</h2>
+                
+                <h3>Essential Vendor Qualifications</h3>
+                <table class="table table-bordered mb-4">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Qualification</th>
+                            <th>Why It Matters</th>
+                            <th>How to Verify</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SOC 2 Experience</td>
+                            <td>Understanding of compliance context and control mapping</td>
+                            <td>Ask for references from SOC 2 clients</td>
+                        </tr>
+                        <tr>
+                            <td>Industry Certifications</td>
+                            <td>Technical competency and professional standards</td>
+                            <td>OSCP, CISSP, CEH, GPEN certifications</td>
+                        </tr>
+                        <tr>
+                            <td>Insurance Coverage</td>
+                            <td>Protection against potential business disruption</td>
+                            <td>Verify E&O and cyber liability insurance</td>
+                        </tr>
+                        <tr>
+                            <td>Methodology Documentation</td>
+                            <td>Systematic and repeatable testing approach</td>
+                            <td>Request detailed methodology documentation</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Penetration Testing Cost Guide</h3>
+                <table class="table table-bordered mb-4">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Testing Type</th>
+                            <th>Small Company (1-50)</th>
+                            <th>Medium Company (50-200)</th>
+                            <th>Large Company (200+)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>External Pen Test</td>
+                            <td>$5,000 - $15,000</td>
+                            <td>$10,000 - $25,000</td>
+                            <td>$20,000 - $50,000+</td>
+                        </tr>
+                        <tr>
+                            <td>Internal Pen Test</td>
+                            <td>$8,000 - $18,000</td>
+                            <td>$15,000 - $35,000</td>
+                            <td>$25,000 - $60,000+</td>
+                        </tr>
+                        <tr>
+                            <td>Web App Testing</td>
+                            <td>$6,000 - $20,000</td>
+                            <td>$15,000 - $40,000</td>
+                            <td>$30,000 - $75,000+</td>
+                        </tr>
+                        <tr>
+                            <td>Comprehensive Assessment</td>
+                            <td>$15,000 - $40,000</td>
+                            <td>$35,000 - $80,000</td>
+                            <td>$75,000 - $150,000+</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="alert alert-info mb-4">
+                    <strong>Cost Factors:</strong> Pricing varies based on scope complexity, number of applications/networks, testing duration, and vendor reputation. Budget for annual testing to maintain current security posture.
+                </div>
+                
+                <h2>Integrating Penetration Testing Results with SOC 2</h2>
+                
+                <h3>Using Pen Test Results as SOC 2 Evidence</h3>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="bg-success text-white p-4 rounded">
+                            <h5><i class="bi bi-check-circle me-2"></i>Strong Evidence</h5>
+                            <ul class="mb-0">
+                                <li>Clean penetration test results with no critical findings</li>
+                                <li>Successful remediation of identified vulnerabilities</li>
+                                <li>Evidence of defense-in-depth security controls</li>
+                                <li>Demonstration of monitoring and detection capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-warning text-dark p-4 rounded">
+                            <h5><i class="bi bi-exclamation-triangle me-2"></i>Audit Risks</h5>
+                            <ul class="mb-0">
+                                <li>Critical vulnerabilities discovered during testing</li>
+                                <li>Inadequate remediation timelines or processes</li>
+                                <li>Lack of vulnerability management procedures</li>
+                                <li>Poor documentation of security monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Remediation and Continuous Improvement</h3>
+                <ol>
+                    <li><strong>Risk-Based Prioritization:</strong> Address critical and high-risk findings immediately</li>
+                    <li><strong>Remediation Timeline:</strong> Establish clear timelines based on risk severity</li>
+                    <li><strong>Validation Testing:</strong> Confirm successful remediation through retesting</li>
+                    <li><strong>Process Improvement:</strong> Update security controls and procedures based on findings</li>
+                    <li><strong>Annual Testing:</strong> Schedule regular penetration testing to maintain security posture</li>
+                </ol>
+                
+                <h2>Best Practices for SOC 2 Penetration Testing</h2>
+                
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-success"><i class="bi bi-check-circle me-2"></i>Do This</h5>
+                                <ul>
+                                    <li>Align testing scope with SOC 2 system boundaries</li>
+                                    <li>Schedule testing during low-business-impact periods</li>
+                                    <li>Implement comprehensive change management</li>
+                                    <li>Document all findings and remediation efforts</li>
+                                    <li>Maintain emergency contact procedures during testing</li>
+                                    <li>Plan for annual penetration testing cycles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger"><i class="bi bi-x-circle me-2"></i>Avoid This</h5>
+                                <ul>
+                                    <li>Testing production systems without proper safeguards</li>
+                                    <li>Choosing vendors based solely on lowest cost</li>
+                                    <li>Ignoring or delaying critical vulnerability remediation</li>
+                                    <li>Failing to involve key stakeholders in planning</li>
+                                    <li>Conducting testing too close to SOC 2 audit deadlines</li>
+                                    <li>Not documenting lessons learned and improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Conclusion: Penetration Testing as a Strategic Security Investment</h2>
+                
+                <p>While not explicitly required, penetration testing has become an essential component of comprehensive SOC 2 compliance. It provides critical evidence for multiple security controls while demonstrating your organization's commitment to proactive security management.</p>
+                
+                <div class="bg-primary text-white p-4 rounded mb-4">
+                    <h4>Key Benefits of SOC 2 Penetration Testing:</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li>Validates effectiveness of security controls</li>
+                                <li>Identifies vulnerabilities before attackers do</li>
+                                <li>Provides evidence for multiple SOC 2 controls</li>
+                                <li>Demonstrates due diligence to customers and auditors</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>Improves overall security posture</li>
+                                <li>Supports risk management and compliance programs</li>
+                                <li>Builds customer confidence and trust</li>
+                                <li>Enables competitive differentiation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-light p-4 rounded">
+                    <h4>Need Help with SOC 2 Penetration Testing?</h4>
+                    <p class="mb-3">Our platform connects you with experienced penetration testing providers who understand SOC 2 requirements and can deliver comprehensive security assessments aligned with your compliance goals.</p>
+                    <a href="../index.html#vendors" class="btn btn-custom btn-lg">Find SOC 2 Security Testing Partners</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SOC2Certification.com</h5>
+                    <p class="mb-0 text-muted">Your trusted guide to SOC 2 compliance</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex gap-3 justify-content-md-end">
+                        <a href="../privacy.html" class="text-light text-decoration-none">Privacy Policy</a>
+                        <a href="../terms.html" class="text-light text-decoration-none">Terms of Service</a>
+                        <a href="../contact.html" class="text-light text-decoration-none">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <p class="mb-0 text-muted">&copy; 2025 soc2certification.com. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
